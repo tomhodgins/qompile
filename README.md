@@ -1,6 +1,6 @@
 # Qompile
 
-Compile HTML with container queries into flat HTML & CSS. This tool consumes an HTML input file and a CSS stylesheet that can makeuse of use JS interpolation anywhere via `${}`.
+Compile HTML with container queries into flat HTML & CSS. This tool consumes an HTML input file and a CSS stylesheet that can make use of use JS interpolation anywhere via `${}`.
 
 Included in this compiler is a mixin for container queries, named `containerQuery()` which accepts three arguments: `selector`, `test`, and `stylesheet`:
 
@@ -19,6 +19,8 @@ ${containerQuery('div', el => el.offsetWidth > 500, `
 ```
 
 ### Usage
+
+### HTML Compiler
 
 The simplest usage of Qompile on the command line outputs a test HTML and CSS to the console:
 
@@ -63,3 +65,16 @@ The path name of the HTML file to output
 #### -v | --verbose
 
 Enables logging of the result to the console
+
+### Live Debugging
+
+This compiler comes with a companion JavaScript runtime for debugging and previewing purposes. If you want to preview what the result of adding a 'Qompile' stylesheet to an HTML document will look like, include a link to the `preqompile.js` file in your HTML document like this:
+
+```
+<script src=preqompile.js></script>
+```
+
+For a comparison between live container queries using `preqompile` and container queries flattened to CSS media queries using `qompile`, check out the following two demo files:
+
+- [Live demo with `preqompile`](https://tomhodgins.github.io/qompile/test/widget-live.html)
+- [Compiled demo with `qompile`](https://tomhodgins.github.io/qompile/test/widget-compiled.html)

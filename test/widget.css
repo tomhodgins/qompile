@@ -1,0 +1,56 @@
+/* Element-level reset */
+.widget,
+.widget * {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Default styles */
+.widget {
+  margin: 1em 0;
+  padding: 1em;
+  color: white;
+  background: black;
+}
+
+${containerQuery('.widget', el => el.offsetWidth > 100, `
+  $this.widget {
+    background: red;
+  }
+`)}
+
+${containerQuery('.widget', el => el.offsetWidth > 200, `
+  $this.widget {
+    background: orange;
+  }
+`)}
+
+${containerQuery('.widget', el => el.offsetWidth > 300, `
+  $this.widget {
+    background: yellow;
+  }
+`)}
+
+${containerQuery('.widget', el => el.offsetWidth > 400, `
+  $this.widget {
+    background: lime;
+  }
+`)}
+
+${containerQuery('.widget', el => el.offsetWidth > 500, `
+  $this.widget {
+    background: blue;
+  }
+`)}
+
+${containerQuery('.widget', el => el.offsetWidth > 600, `
+  $this.widget {
+    background: indigo;
+  }
+`)}
+
+${containerQuery('.widget', el => el.offsetWidth > 700, `
+  $this.widget {
+    background: purple;
+  }
+`)}
