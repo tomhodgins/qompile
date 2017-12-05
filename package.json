@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Compile HTML plus dynamic styles and convert to HTML and CSS",
   "main": "qompile.js",
+  "bin": {
+    "qompile": "qompile.js"
+  },
   "scripts": {
     "test": "node qompile -v"
   },

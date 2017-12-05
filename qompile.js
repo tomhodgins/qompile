@@ -3,7 +3,7 @@
 /*
 
 # Qompile
-## version 0.0.1
+## version 0.0.2
 
 Compile HTML with container queries into flat HTML & CSS. This tool consumes an HTML input file and a CSS stylesheet that can makeuse of use JS interpolation anywhere via `${}`.
 
