@@ -13,6 +13,7 @@
   background: black;
 }
 
+/* Container Queries */
 ${containerQuery('.widget', el => el.offsetWidth > 100, `
   $this.widget {
     background: red;
