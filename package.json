@@ -1,0 +1,30 @@
+{
+  "name": "qompile",
+  "version": "0.0.1",
+  "description": "Compile HTML plus dynamic styles and convert to HTML and CSS",
+  "main": "qompile.js",
+  "scripts": {
+    "test": "node qompile -v"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "element",
+    "queries",
+    "container",
+    "queries",
+    "eq",
+    "cq",
+    "compiler",
+    "atomizer",
+    "optimizer",
+    "renderer",
+    "flattener"
+  ],
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "puppeteer": "^0.13.0"
+  },
+  "author": "Tommy Hodgins",
+  "license": "MIT"
+}
