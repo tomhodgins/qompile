@@ -82,7 +82,7 @@ For a comparison between live container queries using `preqompile` and container
 
 - [Live demo with `preqompile`](https://tomhodgins.github.io/qompile/test/widget-live.html)
 
-- [Compiled demo using inlined CSS with `qompile`](https://tomhodgins.github.io/qompile/test/widget-flattened.html)
+- [Compiled demo using inlined CSS with `qompile`](https://tomhodgins.github.io/qompile/test/widget-inline.html)
 
 ```bash
 $ qompile -h test/src/widget.html -c test/src/widget.css -o test/widget-flattened.html
