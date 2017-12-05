@@ -3,7 +3,7 @@
 /*
 
 # Qompile
-## version 0.0.3
+## version 0.0.4
 
 Compile HTML with container queries into flat HTML & CSS. This tool consumes an HTML input file and a CSS stylesheet that can makeuse of use JS interpolation anywhere via `${}`.
 
@@ -42,7 +42,7 @@ $ qompile input.html -c styles.css -o output.html
 If you want to fine-tune the output more, here is a list of all supported options and a description of what they are used for:
 
 ```
-$ qompile [-h|--html]* input.html [-c|-css] styles.css [-r|--range] 100:2000 [-s|--step] 100 [-o|--output] output.html [-v|--verbose]
+$ qompile [-h|--html]* input.html [-c|-css] styles.css [-r|--range] 100:2000 [-s|--step] 100 [-o|--output] output.html [-e|--external] external.css [-v|--verbose]
 ```
 
 #### -h | --html
@@ -64,6 +64,10 @@ A number defining the step size between snapshots. Defult step is `100`
 #### -o | --output
 
 The path name of the HTML file to output
+
+#### -e | --external
+
+The path name of the external CSS file to output
 
 #### -v | --verbose
 
@@ -90,10 +94,11 @@ const css = arg.c || arg.css || null
 const range = arg.r || arg.range || '0:2000'
 const step = arg.s || arg.step || 100
 const output = arg.o || arg.output || false
+const external = arg.e || arg.external || false
 let verbose = arg.v || arg.verbose || false
 
 // Enable verbose output if no output specified
-if (!output && !verbose) {
+if (!output && !external) {
 
   verbose = true
 
@@ -185,11 +190,30 @@ puppeteer.launch().then(async browser => {
   }
 
   // Add generated styles to DOM
-  await page.evaluate(code => {
+  if (external) {
 
-    document.head.innerHTML += `<style>${code}\n</style>`
+    await page.evaluate(path => {
 
-  }, generatedCSS)
+      path = path.split('/')
+
+      let filename = path[path.length - 1]
+
+      document.head.innerHTML += `<link href="${filename}" rel=stylesheet>`
+
+    }, external)
+
+    fs.writeFileSync(external, generatedCSS)
+
+  } else {
+
+    await page.evaluate(css => {
+
+      document.head.innerHTML += `<style>${css}\n</style>`
+
+    }, generatedCSS)
+
+  }
+
 
   // Output final DOM
   const renderedHTML = await page.content()

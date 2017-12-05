@@ -1,7 +1,7 @@
 /*
 
 # Preqompile
-## version 0.0.3
+## version 0.0.4
 
 Preqompile is a JS-in-CSS runtime that interprets the same containerQuery syntax as Qompile.
 
