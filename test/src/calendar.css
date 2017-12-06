@@ -1,4 +1,4 @@
-/* Popover Functionality */
+/* Calendar Container Queries */
 ${containerQuery('[data-calendar]', el => el.offsetWidth <= 850, `
   $this[data-calendar] label:hover {
     background: #fc0;

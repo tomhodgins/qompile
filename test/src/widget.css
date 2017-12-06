@@ -1,18 +1,4 @@
-/* Widget Demo */
-.widget,
-.widget * {
-  box-sizing: border-box;
-  font-family: sans-serif;
-}
-
-.widget {
-  margin: 1em 0;
-  padding: 1em;
-  color: white;
-  background: black;
-}
-
-/* Container Queries */
+/* Widget Container Queries */
 ${containerQuery('.widget', el => 100 <= el.offsetWidth && el.offsetWidth < 200, `
   $this.widget {
     background: red;

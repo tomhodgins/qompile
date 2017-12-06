@@ -1,5 +1,4 @@
-/* Nested Demo */
-
+/* Nested Container Queries */
 ${containerQuery('article', el => 200 <= el.offsetWidth && el.offsetWidth < 300, `
   $this:before {
     content: '200px';
