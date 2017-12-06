@@ -1,6 +1,6 @@
 {
   "name": "qompile",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Compile HTML plus dynamic styles and convert to HTML and CSS",
   "main": "qompile.js",
   "bin": {
