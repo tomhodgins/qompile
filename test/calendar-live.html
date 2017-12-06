@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<title>Calendar Demo</title>
+
+<link href=http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css rel=stylesheet>
+
+<style>
+  /* Base Calendar Styles */
+  [data-calendar] {
+    position: relative;
+    padding: 0;
+    font-size: 12pt;
+    opacity: 1;
+  }
+  [data-calendar] * {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-kerning: auto;
+    line-height: 1.2;
+  }
+  [data-calendar] .title {
+    text-align: center;
+    color: #333;
+    font-family: 'Source Sans Pro', sans-serif;
+    position: relative;
+    z-index: 100;
+    margin: 0 0 12pt 0;
+    transition: font-size .1s ease-in-out;
+  }
+  [data-calendar] .title .month {
+    font-weight: 400;
+  }
+  [data-calendar] .title .year {
+    font-weight: 300;
+    opacity: .5;
+  }
+  [data-calendar] nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 0 .5em;
+    z-index: 200;
+    transition: opacity .2s ease-in-out;
+  }
+  [data-calendar] nav a {
+    display: inline-block;
+    color: #999;
+    padding: .1em .1em;
+    transition: color .1s ease-in-out;
+  }
+  [data-calendar] nav a.prev {
+    float: left;
+  }
+  [data-calendar] nav a.next {
+    float: right;
+  }
+  [data-calendar] nav a:hover,
+  [data-calendar] nav a :focus {
+    color: #555;
+  }
+  [data-calendar] .dates:after {
+     content: '';
+     display: block;
+     clear: both;
+  }
+  [data-calendar] article,
+  [data-calendar] article * {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  [data-calendar] article {
+    display: block;
+    float: left;
+    width: 14.28571428571429%;
+    padding-top: 14.28571428571429%;
+    position: relative;
+    z-index: 250;
+  }
+  [data-calendar] input[type="radio"] {
+    display: none;
+  }
+  [data-calendar] .reset,
+  [data-calendar] .reset:hover {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent !important;
+    z-index: 200;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  [data-calendar] input:checked + .reset,
+  [data-calendar] input:checked + .reset:hover {
+    cursor: default;
+    display: block;
+    z-index: 20;
+  }
+  [data-calendar] ol {
+    display: block;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    font-family: 'Source Sans Pro', 'Open Sans', Roboto, 'Helvetica Neue', 'Myriad Pro', Myriad, 'Segoe UI', Arial, sans-serif;
+    pointer-events: none;
+    cursor: default;
+    position: relative;
+    z-index: 200;
+  }
+  [data-calendar] ol li {
+    display: inline-block;
+    float: left;
+    width: 14.28571428571429%;
+    padding: 0;
+    color: #999;
+    padding: .5em 0;
+    text-align: center;
+    font-size: 10pt;
+    z-index: 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: .5em;
+  }
+  [data-calendar] ol li .short {
+    display: none;
+  }
+  [data-calendar] ol li .full {
+    display: none;
+  }
+</style>
+
+<section data-calendar>
+  <h2 class=title>
+    <span class=month>December</span>
+    <span class=year>2017</span>
+  </h2>
+  <nav>
+    <a href=# class=prev><i class=ion-android-arrow-back></i></a>
+    <a href=# class=next><i class=ion-android-arrow-forward></i></a>
+  </nav>
+  <ol>
+    <li>S<span class=short>un<span class=full>day</span></span></li>
+    <li>M<span class=short>on<span class=full>day</span></span></li>
+    <li>T<span class=short>ues<span class=full>day</span></span></li>
+    <li>W<span class=short>ed<span class=full>nesday</span></span></li>
+    <li>T<span class=short>hur<span class=full>sday</span></span></li>
+    <li>F<span class=short>ri<span class=full>day</span></span></li>
+    <li>S<span class=short>at<span class=full>urday</span></span></li>
+  </ol>
+  <div class=dates>
+    <!-- Week 1 -->
+    <article>
+      <input type=radio name=eqCal id=day_0>
+      <label for=day_0></label>
+      <h3 class=date></h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_1>
+      <label for=day_1>
+        <div>
+          <span class=event>
+            <h4>Event Title</h4>
+            <aside>Some info here<br>With a few more lines</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class=date>1</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_2>
+      <label for=day_2></label>
+      <h3 class=date>2</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_3>
+      <label for=day_3>
+        <div>
+          <span class="event light">
+            <h4>Event Title</h4>
+            <aside><strong>Other:</strong> information<br><strong>More:</strong> information</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class=date>3</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_4>
+      <label for=day_4></label>
+      <h3 class=date>4</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_5>
+      <label for=day_5>
+        <div>
+          <span class="event light">
+            <h4>Event Title</h4>
+            <aside><strong>Name of Event here!</strong><br>Info about event</aside>
+          </span>
+          <span class="event dark">
+            <h4>Event Title</h4>
+            <aside>More info here that will surely cause this text to overflow inside of the square</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class=date>5</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_6>
+      <label for=day_6></label>
+      <h3 class=date>6</h3>
+    </article>
+    <!-- Week 2 -->
+    <article>
+      <input type=radio name=eqCal id=day_7>
+      <label for=day_7></label>
+      <h3 class=date>7</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_8>
+      <label for=day_8></label>
+      <h3 class=date>8</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_9>
+      <label for=day_9></label>
+      <h3 class=date>9</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_10>
+      <label for=day_10></label>
+      <h3 class=date>10</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_11>
+      <label for=day_11>
+        <div>
+          <span class="event dark">
+            <h4>Event Title</h4>
+            <aside><strong>Location:</strong> 123 Place Road<br><strong>Time:</strong> 5pm</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class=date>11</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_12>
+      <label for=day_12></label>
+      <h3 class=date>12</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_13>
+      <label for=day_13></label>
+      <h3 class=date>13</h3>
+    </article>
+    <!-- Week 3 -->
+    <article>
+      <input type=radio name=eqCal id=day_14>
+      <label for=day_14></label>
+      <h3 class=date>14</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_15>
+      <label for=day_15>
+        <div>
+          <span class=event>
+            <h4>Event Title</h4>
+            <aside>This is a bit of information about this event</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class=date>15</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_16>
+      <label for=day_16></label>
+      <h3 class=date>16</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_17>
+      <label for=day_17>
+        <div>
+          <span class="event light">
+            <h4>Event Title</h4>
+            <aside><strong>Speaker:</strong> Joe Somebody<br><strong>Room:</strong> 214</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class=date>17</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_18>
+      <label for=day_18></label>
+      <h3 class=date>18</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_19>
+      <label for=day_19></label>
+      <h3 class=date>19</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_20>
+      <label for=day_20></label>
+      <h3 class=date>20</h3>
+    </article>
+    <!-- Week 4 -->
+    <article>
+      <input type=radio name=eqCal id=day_21>
+      <label for=day_21></label>
+      <h3 class=date>21</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_22>
+      <label for=day_22>
+        <div>
+          <span class=event>
+            <h4>Event Title</h4>
+            <aside>7:30 sharp</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class="date today">22</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_23>
+      <label for=day_23></label>
+      <h3 class=date>23</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_24>
+      <label for=day_24>
+        <div>
+          <span class="event light">
+            <h4>Session 1</h4>
+            <aside></aside>
+          </span>
+          <span class="event light">
+            <h4>Session 2</h4>
+            <aside></aside>
+          </span>
+          <span class="event light">
+            <h4>Session 3</h4>
+            <aside></aside>
+          </span>
+        </div>
+      </label>
+      <h3 class=date>24</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_25>
+      <label for=day_25></label>
+      <h3 class=date>25</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_26>
+      <label for=day_26>
+        <div>
+          <span class="event light">
+            <h4>Event Title</h4>
+            <aside></aside>
+          </span>
+          <span class="event dark">
+            <h4>Event Title</h4>
+            <aside></aside>
+          </span>
+        </div>
+      </label>
+      <h3 class=date>26</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_27>
+      <label for=day_27></label>
+      <h3 class=date>27</h3>
+    </article>
+    <!-- Week 5 -->
+    <article>
+      <input type=radio name=eqCal id=day_28>
+      <label for=day_28></label>
+      <h3 class=date>28</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_29>
+      <label for=day_29>
+        <div>
+          <span class=event>
+            <h4>Event Title</h4>
+            <aside>Event Description</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class=date>29</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_30>
+      <label for=day_30></label>
+      <h3 class=date>30</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_31>
+      <label for=day_31>
+        <div>
+          <span class="event light">
+            <h4>Event Title</h4>
+            <aside></aside>
+          </span>
+        </div>
+      </label>
+      <h3 class=date>31</h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_32>
+      <label for=day_32></label>
+      <h3 class=date></h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_33>
+      <label for=day_33></label>
+      <h3 class=date></h3>
+    </article>
+    <article>
+      <input type=radio name=eqCal id=day_34>
+      <label for=day_34></label>
+      <h3 class=date></h3>
+    </article>
+  </div>
+  <input type=radio name=eqCal id=reset>
+  <label class=reset for=reset>
+</section>
+
+<!-- Live Debugging Version -->
+<link href="src/calendar.css" rel=stylesheet>
+<script src="../preqompile.js"></script>

@@ -3,9 +3,9 @@
 /*
 
 # Qompile
-## version 0.0.4
+## version 0.0.5
 
-Compile HTML with container queries into flat HTML & CSS. This tool consumes an HTML input file and a CSS stylesheet that can makeuse of use JS interpolation anywhere via `${}`.
+Compile HTML and container queries into HTML and CSS media queries. This tool consumes an HTML input file and a CSS stylesheet that can makeuse of use JS interpolation anywhere via `${}`.
 
 Included in this compiler is a mixin for container queries, named `containerQuery()` which accepts three arguments: `selector`, `test`, and `stylesheet`:
 
@@ -55,11 +55,11 @@ The path name of the stylesheet file to be read
 
 #### -r | --range
 
-A colon-separated pair of numbers setting the minimum and maximum widths. Default range is `0:2000`
+A colon-separated pair of numbers setting the minimum and maximum widths. Default range is `1:2000`
 
 #### -s | --step
 
-A number defining the step size between snapshots. Defult step is `100`
+A number defining the step size between snapshots. Default step is `100`
 
 #### -o | --output
 
@@ -70,6 +70,10 @@ The path name of the HTML file to output
 The path name of the external CSS file to output
 
 #### -v | --verbose
+
+#### -m | --minify
+
+Enables rule de-duplication via CSSnano, and media query consolidation via css-mqpacker
 
 Enables logging of the result to the console
 
@@ -87,46 +91,50 @@ Enables logging of the result to the console
 const fs = require('fs') // read/write files
 const arg = require('minimist')(process.argv.slice(2)) // read arguments
 const puppeteer = require('puppeteer') // control headless browser
+const postcss = require('postcss') // run CSSnano and css-mqpacker
 
 // Read arguments from console
-const html = arg._[0] || arg.h || arg.html || null
-const css = arg.c || arg.css || null
-const range = arg.r || arg.range || '0:2000'
-const step = arg.s || arg.step || 100
-const output = arg.o || arg.output || false
-const external = arg.e || arg.external || false
-let verbose = arg.v || arg.verbose || false
+const opts = {
+  html: arg._[0] || arg.h || arg.html || null,
+  css: arg.c || arg.css || null,
+  range: arg.r || arg.range || '1:2000',
+  step: arg.s || arg.step || 100,
+  output: arg.o || arg.output || false,
+  external: arg.e || arg.external || false,
+  verbose: arg.v || arg.verbose || false,
+  minify: arg.m || arg.minify || false
+}
 
 // Enable verbose output if no output specified
-if (!output && !external) {
+if (!opts.output && !opts.external) {
 
-  verbose = true
+  opts.verbose = true
 
 }
 
 // Split range into min & max
-const min = parseInt(range.split(':')[0])
-const max = parseInt(range.split(':')[1])
+const min = parseInt(opts.range.split(':')[0])
+const max = parseInt(opts.range.split(':')[1])
 
 // Calculate steps
 const steps = []
 
-for (let i=0; (step*i) < (max-min); i++) {
+for (let i=0; (opts.step*i) < (max-min); i++) {
 
-  steps.push(min + (step * i))
+  steps.push(min + (opts.step * i))
 
 }
 
 steps.push(max)
 
 // Load HTML & CSS from file
-const loadedHTML = html
-                     ? fs.readFileSync(html).toString()
-                     : '<!DOCTYPE html><title>preqompiled example</title>'
-const loadedCSS = css
-                    ? fs.readFileSync(css).toString()
-                    : '\nhtml { background: lime; }'
+const loadedHTML = opts.html
+                     ? fs.readFileSync(opts.html).toString()
+                     : '<div>qompile demo</div>'
 
+const loadedCSS = opts.css
+                    ? fs.readFileSync(opts.css).toString()
+                    : '${containerQuery("div", el => el.offsetWidth > 600, "$this{background:lime}")}'
 
 // Prepare empty stylesheet
 let generatedCSS = ''
@@ -136,6 +144,7 @@ puppeteer.launch().then(async browser => {
 
   // Load HTML into browser
   const page = await browser.newPage()
+
   await page.goto(
           `data:text/html;charset=utf8,${loadedHTML}`,
           {waitUntil: 'networkidle2'})
@@ -144,14 +153,12 @@ puppeteer.launch().then(async browser => {
   for (let i=0; i<steps.length; i++) {
 
     // Resize the viewport
-    await page.setViewport({width: steps[i], height: 1000})
-
-    let watchDog = page.waitForFunction('true')
+    await page.setViewport({width: steps[i], height: 400})
 
     // Render styles at the current width
-    generatedCSS += await page.evaluate((size, loadedCSS) => {
+    generatedCSS += await page.evaluate((size, next, loadedCSS) => {
 
-      let func = new Function(' return `' + loadedCSS + '`')
+      let func = new Function('return `' + loadedCSS + '`')
 
       let stylesheet = func.call(
 
@@ -170,7 +177,7 @@ puppeteer.launch().then(async browser => {
               const css = stylesheet.replace(/\$this/g, `[data-${attr}="${count}"]`)
 
               tag[i].setAttribute(`data-${attr}`, count)
-              style += `\n@media (min-width: ${size}px) { ${css} }`
+              style += `@media(min-width: ${size}px)${next && ' and (max-width:' + next + 'px)' || ''}{${css}}`
               count++
 
             }
@@ -185,12 +192,28 @@ puppeteer.launch().then(async browser => {
 
       return stylesheet
 
-    }, steps[i], loadedCSS)
+    }, steps[i], steps[i+1], loadedCSS)
+
+  }
+
+  // Deduplicate rules & consolidate queries
+  if (opts.minify) {
+
+    await postcss([
+
+      require('cssnano')(),
+      require('css-mqpacker')()
+
+    ]).process(generatedCSS).then(result => {
+
+      generatedCSS = result.css
+
+    })
 
   }
 
   // Add generated styles to DOM
-  if (external) {
+  if (opts.external) {
 
     await page.evaluate(path => {
 
@@ -200,33 +223,32 @@ puppeteer.launch().then(async browser => {
 
       document.head.innerHTML += `<link href="${filename}" rel=stylesheet>`
 
-    }, external)
+    }, opts.external)
 
-    fs.writeFileSync(external, generatedCSS)
+    fs.writeFileSync(opts.external, generatedCSS)
 
   } else {
 
     await page.evaluate(css => {
 
-      document.head.innerHTML += `<style>${css}\n</style>`
+      document.head.innerHTML += `<style>${css}</style>`
 
     }, generatedCSS)
 
   }
 
-
   // Output final DOM
   const renderedHTML = await page.content()
 
   // White output to file
-  if (output) {
+  if (opts.output) {
 
-    fs.writeFileSync(output, renderedHTML)
+    fs.writeFileSync(opts.output, renderedHTML)
 
   }
 
   // Log output to console
-  if (verbose) {
+  if (opts.verbose) {
 
     console.log(renderedHTML)
 

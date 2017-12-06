@@ -1,6 +1,6 @@
 # Qompile
 
-Compile HTML with container queries into flat HTML & CSS. This tool consumes an HTML input file and a CSS stylesheet that can make use of use JS interpolation anywhere via `${}`.
+Compile HTML and container queries into HTML and CSS media queries. This tool consumes an HTML input file and a CSS stylesheet that can make use of use JS interpolation anywhere via `${}`.
 
 Included in this compiler is a mixin for container queries, named `containerQuery()` which accepts three arguments: `selector`, `test`, and `stylesheet`:
 
@@ -18,7 +18,7 @@ ${containerQuery('div', el => el.offsetWidth > 500, `
 `)}
 ```
 
-### Usage
+## Usage
 
 ### HTML Compiler
 
@@ -34,7 +34,7 @@ A normal usage where you are consuming a file named `input.html` and a styleshee
 $ qompile input.html -c styles.css -o output.html
 ```
 
-### Options
+#### Options
 
 If you want to fine-tune the output more, here is a list of all supported options and a description of what they are used for:
 
@@ -42,33 +42,37 @@ If you want to fine-tune the output more, here is a list of all supported option
 $ qompile [-h|--html]* input.html [-c|-css] styles.css [-r|--range] 100:2000 [-s|--step] 100 [-o|--output] output.html [-e|--external] external.css [-v|--verbose]
 ```
 
-#### -h | --html
+##### -h | --html
 
 The path name of the HTML file to be read
 
-#### -c | --css
+##### -c | --css
 
 The path name of the stylesheet file to be read
 
-#### -r | --range
+##### -r | --range
 
-A colon-separated pair of numbers setting the minimum and maximum widths. Default range is `0:2000`
+A colon-separated pair of numbers setting the minimum and maximum widths. Default range is `1:2000`
 
-#### -s | --step
+##### -s | --step
 
-A number defining the step size between snapshots. Defult step is `100`
+A number defining the step size between snapshots. Default step is `100`
 
-#### -o | --output
+##### -o | --output
 
 The path name of the HTML file to output
 
-#### -e | --external
+##### -e | --external
 
 The path name of the external CSS file to output
 
-#### -v | --verbose
+##### -v | --verbose
 
 Enables logging of the result to the console
+
+##### -m | --minify
+
+Enables rule de-duplication via CSSnano, and media query consolidation via css-mqpacker
 
 ### Live Debugging
 
@@ -78,18 +82,30 @@ This compiler comes with a companion JavaScript runtime for debugging and previe
 <script src=preqompile.js></script>
 ```
 
-For a comparison between live container queries using `preqompile` and container queries flattened to CSS media queries using `qompile`, check out the following two demo files:
+For a comparison between live container queries using `preqompile` and container queries flattened to CSS media queries using `qompile`, check out the following demos:
 
-- [Live demo with `preqompile`](https://tomhodgins.github.io/qompile/test/widget-live.html)
+## Examples
 
-- [Compiled demo using inlined CSS with `qompile`](https://tomhodgins.github.io/qompile/test/widget-inline.html)
+### Widget Demo
 
-```bash
-$ qompile -h test/src/widget.html -c test/src/widget.css -o test/widget-flattened.html
-```
+- [Input HTML](test/src/widget.html)
+- [Input Container Queries](test/src/widget.css)
+- [Live preview via `preqompile` runtime](https://tomhodgins.github.io/qompile/test/widget-live.html)
+- [Compiled inline via `qompile`](https://tomhodgins.github.io/qompile/test/widget-inline.html)
+- [Compiled with external stylesheet via `qompile`](https://tomhodgins.github.io/qompile/test/widget-external.html)
 
-- [Compiled demo using external CSS with `qompile`](https://tomhodgins.github.io/qompile/test/widget-external.html)
+### Nested Components Demo
 
-```bash
-$ qompile -h test/src/widget.html -c test/src/widget.css -o test/widget-external.html -e test/external.css
-```
+- [Input HTML](test/src/nested.html)
+- [Input Container Queries](test/src/nested.css)
+- [Live preview via `preqompile` runtime](https://tomhodgins.github.io/qompile/test/nested-live.html)
+- [Compiled inline via `qompile`](https://tomhodgins.github.io/qompile/test/nested-inline.html)
+- [Compiled with external stylesheet via `qompile`](https://tomhodgins.github.io/qompile/test/nested-external.html)
+
+### Calendar Demo
+
+- [Input HTML](test/src/calendar.html)
+- [Input Container Queries](test/src/calendar.css)
+- [Live preview via `preqompile` runtime](https://tomhodgins.github.io/qompile/test/calendar-live.html)
+- [Compiled inline via `qompile`](https://tomhodgins.github.io/qompile/test/calendar-inline.html)
+- [Compiled with external stylesheet via `qompile`](https://tomhodgins.github.io/qompile/test/calendar-external.html)

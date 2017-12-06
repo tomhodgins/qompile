@@ -1,0 +1,55 @@
+/* Nested Demo */
+
+${containerQuery('article', el => 200 <= el.offsetWidth && el.offsetWidth < 300, `
+  $this:before {
+    content: '200px';
+  }
+  $this {
+    background: lightskyblue;
+  }
+`)}
+
+${containerQuery('article', el => 300 <= el.offsetWidth && el.offsetWidth < 400, `
+  $this:before {
+    content: '300px';
+  }
+  $this {
+    background: pink;
+  }
+`)}
+
+${containerQuery('article', el => 400 <= el.offsetWidth && el.offsetWidth < 500, `
+  $this:before {
+    content: '400px';
+  }
+  $this {
+    background: lightgreen;
+  }
+`)}
+
+${containerQuery('article', el => 500 <= el.offsetWidth && el.offsetWidth < 600, `
+  $this:before {
+    content: '500px';
+  }
+  $this {
+    background: coral;
+  }
+`)}
+
+${containerQuery('article', el => 600 <= el.offsetWidth && el.offsetWidth < 700, `
+  $this:before {
+    content: '600px';
+  }
+  $this {
+    background: mediumslateblue;
+  }
+`)}
+
+${containerQuery('article', el => 700 <= el.offsetWidth, `
+  $this:before {
+    content: '700px';
+  }
+  $this {
+    background: khaki;
+  }
+`)}

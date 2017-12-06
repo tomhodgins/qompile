@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<title>Nested Elements</title>
+
+<style>
+  /* Nested Elements */
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 10pt;
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    margin: 1em;
+  }
+  article {
+    padding: 2em;
+    background: #eee;
+    border-radius: .3em;
+    margin: 0 0 1em 0;
+  }
+  article:before {
+    content: '< 200px wide';
+  }
+
+  /* Layout */
+  @media (min-width: 600px) {
+    main,
+    aside {
+      float: left;
+      width: calc(60% - .5em);
+      margin-right: 1em;
+    }
+    aside {
+      width: calc(40% - .5em);
+      margin-right: 0;
+    }
+  }
+</style>
+
+<h1>Nesting Container-Query Enabled Elements</h1>
+<header>
+  <h2>Header</h2>
+  <article></article>
+</header>
+<section>
+  <main>
+    <h2>Main</h2>
+    <article></article>
+    <article></article>
+  </main>
+  <aside>
+    <h2>Sidebar</h2>
+    <article></article>
+    <article></article>
+  </aside>
+</section>

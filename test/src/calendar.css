@@ -1,0 +1,413 @@
+/* Popover Functionality */
+${containerQuery('[data-calendar]', el => el.offsetWidth <= 850, `
+  $this[data-calendar] label:hover {
+    background: #fc0;
+  }
+  $this[data-calendar] input:checked + label {
+    background: #fc0;
+  }
+  $this[data-calendar] input:checked + label + .date {
+    color: #fff;
+  }
+  $this[data-calendar] label {
+    cursor: pointer;
+    -webkit-tap-highlight-color: #f60 !important;
+  }
+  $this[data-calendar] label:empty {
+    cursor: default;
+    background: transparent;
+    pointer-events: none;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  $this[data-calendar] input:checked + label:empty:before {
+    display: none;
+  }
+  $this[data-calendar] input:checked + label:before {
+    content: '';
+    display: block;
+    border: 12px solid transparent;
+    border-top-color: #ccc;
+    position: absolute;
+    left: 50%;
+    margin-left: -12px;
+    top: -12.5px;
+    z-index: 1000;
+  }
+  $this[data-calendar] input:checked + label:after {
+    content: '';
+    display: block;
+    border: 11px solid transparent;
+    border-top-color: #f0f0f0;
+    position: absolute;
+    left: 50%;
+    margin-left: -11px;
+    top: -13px;
+    z-index: 1500;
+  }
+  $this[data-calendar] label > div {
+    height: 100%;
+  }
+  $this[data-calendar] input:checked + label > div {
+    content: '';
+    display: inline-block;
+    width: 200px;
+    background: #f0f0f0;
+    height: 150px;
+    top: -162px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    z-index: 1000;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: rgba(0,0,0,.1) 0 1px 5px;
+    cursor: default;
+    z-index: 500;
+  }
+  $this[data-calendar] article:nth-child(7n+1) input:checked + label > div {
+    margin-left: -50px;
+  }
+  $this[data-calendar] article:nth-child(7n+2) input:checked + label > div {
+    margin-left: -75px;
+  }
+  $this[data-calendar] article:nth-child(7n+6) input:checked + label > div {
+    margin-left: -125px;
+  }
+  $this[data-calendar] article:nth-child(7n+7) input:checked + label > div {
+    margin-left: -150px;
+  }
+  $this[data-calendar] input:checked + label > div::-webkit-scrollbar {
+    display: none;
+  }
+  $this[data-calendar] input:checked + label .event {
+    display: block;
+    height: auto;
+    width: auto;
+    float: none;
+    position: relative;
+    margin: 2% 2% 0 2%;
+    padding: 3%;
+    text-align: left;
+    z-index: 750;
+  }
+  $this[data-calendar] input:checked + label .event:last-child {
+    margin-bottom: 2%;
+  }
+  $this[data-calendar] input:checked + label .event + .event {
+    margin-top: 2%;
+  }
+  $this[data-calendar] input:checked + label .event h4 {
+    font-size: 100%;
+    margin: 0;
+    display: block;
+    color: #333;
+    padding: 0 2%;
+  }
+  $this[data-calendar] input:checked + label .event aside:empty {
+    display: none;
+  }
+  $this[data-calendar] input:checked + label .event aside {
+    display: block;
+    padding: 2% 2% 0 2%;
+    font-size: 90%;
+    color: #444;
+  }
+`)}
+/* Dot Grid */
+${containerQuery('[data-calendar]', el => el.offsetWidth <= 200, `
+  $this[data-calendar] .title,
+  $this[data-calendar] nav a {
+    font-size: 100%;
+  }
+  $this[data-calendar] nav {
+    opacity: 0;
+  }
+  $this[data-calendar] label {
+    content: '';
+    display: block;
+    width: 25%;
+    padding-top: 25%;
+    height: 0;
+    background: #999;
+    position: absolute;
+    top: 50%;
+    margin-top: -12.5%;
+    left: 50%;
+    margin-left: -12.5%;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  $this[data-calendar] .date,
+  $this[data-calendar] .event {
+    display: none;
+  }
+  $this[data-calendar] input:checked + label > div,
+  $this[data-calendar] input:checked + label:before {
+    display: none;
+  }
+`)}
+/* Small Numbers */
+${containerQuery('[data-calendar]', el => 200 <= el.offsetWidth && el.offsetWidth < 850, `
+  $this[data-calendar] .title {
+    font-size: 125%;
+  }
+  $this[data-calendar] nav a {
+    font-size: 125%;
+  }
+  $this[data-calendar] nav {
+    opacity: 1;
+  }
+  $this[data-calendar] article {
+    width: 13.14%;
+    padding-top: 12%;
+    margin-right: 1.33%;
+  }
+  $this[data-calendar] article:nth-child(7n+0) {
+    margin-right: 0;
+  }
+  $this[data-calendar] article:nth-child(n+8) {
+    margin-top: 1.33%;
+  }
+  $this[data-calendar] label {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background: #f70;
+    border-radius: 50%;
+  }
+  $this[data-calendar] .event h4,
+  $this[data-calendar] .event aside {
+    display: none;
+  }
+  $this[data-calendar] .date {
+    display: block;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    font-size: 100%;
+    font-weight: 600;
+    top: 50%;
+    margin-top: -7.5pt;
+    color: #fff;
+    z-index: 1000;
+    pointer-events: none;
+  }
+  $this[data-calendar] label:empty + .date {
+    color: #999;
+  }
+  $this[data-calendar] .date.today,
+  $this[data-calendar] label:empty + .date.today {
+    color: #000 !important;
+  }
+  $this[data-calendar] label {
+    text-align: right;
+  }
+`)}
+${containerQuery('[data-calendar]', el => 300 <= el.offsetWidth && el.offsetWidth < 400, `
+  $this[data-calendar] .title,
+  $this[data-calendar] nav a {
+    font-size: 150%;
+  }
+  $this[data-calendar] nav a {
+    font-size: 150%;
+    padding: .1em .15em;
+  }
+`)}
+${containerQuery('[data-calendar]', el => 400 <= el.offsetWidth && el.offsetWidth < 500, `
+  $this[data-calendar] .title,
+  $this[data-calendar] nav a {
+    font-size: 200%;
+  }
+  $this[data-calendar] label {
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+  }
+  $this[data-calendar] nav a {
+    font-size: 200%;
+    padding: .1em .15em;
+  }
+`)}
+${containerQuery('[data-calendar]', el => 500 <= el.offsetWidth && el.offsetWidth < 700, `
+  $this[data-calendar] .title,
+  $this[data-calendar] nav a {
+    font-size: 300%;
+  }
+  $this[data-calendar] .date {
+    font-size: 18pt;
+    margin-top: -10pt;
+  }
+  $this[data-calendar] ol li .short {
+    display: inline;
+  }
+`)}
+${containerQuery('[data-calendar]', el => 700 <= el.offsetWidth && el.offsetWidth < 850, `
+  $this[data-calendar] .title,
+  $this[data-calendar] nav a {
+    font-size: 350%;
+  }
+  $this[data-calendar] .date {
+    font-size: 24pt;
+    margin-top: -14pt;
+  }
+  $this[data-calendar] ol li {
+   font-size: 12pt;
+  }
+  $this[data-calendar] ol li .short,
+  $this[data-calendar] ol li .full {
+    display: inline;
+  }
+`)}
+/* Big Calendar */
+${containerQuery('[data-calendar]', el => 850 <= el.offsetWidth, `
+  $this[data-calendar] .title {
+    font-size: 450%;
+    margin: 0 0 -14pt 0;
+    color: #333;
+    overflow: hidden;
+    text-align: left;
+    letter-spacing: -.03em;
+  }
+  $this[data-calendar] nav {
+    width: 100%;
+    text-align: right;
+  }
+  $this[data-calendar] nav a {
+    font-size: 350%;
+    float: none !important;
+  }
+  $this[data-calendar] .title .month {
+    font-weight: 400;
+  }
+  $this[data-calendar] .title .year {
+    font-weight: 300;
+    opacity: .4;
+  }
+  $this[data-calendar] ol {
+    margin: 0;
+    border-bottom: none;
+    overflow: hidden;
+  }
+  $this[data-calendar] ol li {
+    border: 1px solid #ccc;
+    border-right: none;
+    margin-bottom: 0;
+    font-size: 12pt;
+    padding: .25em 0;
+    background: rgba(255,255,255,.8);
+    border-bottom: none;
+  }
+  $this[data-calendar] ol li .short,
+  $this[data-calendar] ol li .full {
+    display: inline;
+  }
+  $this[data-calendar] ol li + li {
+    border-right-width: 1px;
+  }
+  $this[data-calendar] ol li:last-child {
+    border-right: 1px solid #ccc;
+  }
+  $this[data-calendar] article {
+    border: 1px solid #ccc;
+    border-right-width: 0;
+    background: rgba(255,255,255,.8);
+  }
+  $this[data-calendar] article:nth-child(7n+0) {
+    border-right-width: 1px;
+  }
+  $this[data-calendar] article:nth-child(n+8) {
+    border-top: none;
+  }
+  $this[data-calendar] .date:empty {
+    display: none;
+    pointer-events: none;
+  }
+  $this[data-calendar] .date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 150%;
+    font-weight: 400;
+    display: inline-block;
+    padding: 2% 5%;
+    margin: 0;
+    color: #999;
+    letter-spacing: -.03em;
+    cursor: none;
+  }
+  $this[data-calendar] .date.today {
+    color: #000 !important;
+  }
+  $this[data-calendar] label > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 20% 0 3% 0;
+    z-index: 1500;
+  }
+  $this[data-calendar] label > div::-webkit-scrollbar {
+    display: none;
+  }
+  $this[data-calendar] .event {
+    display: block;
+    position: relative;
+    border-radius: 3px;
+    margin: 3% 3% 5% 3%;
+    padding: 3%;
+    border: 1px solid #ccc;
+    border-left-width: 5px;
+    background: #fafafa;
+    box-shadow: rgba(0,0,0,.05) 0 2px 2px;
+  }
+  $this[data-calendar] .event:last-child {
+    margin-bottom: 3%;
+  }
+  $this[data-calendar] .event h4 {
+    margin: 0;
+    display: block;
+    color: #555;
+    padding: 2%;
+  }
+  $this[data-calendar] .event aside:empty {
+    display: none;
+  }
+  $this[data-calendar] .event aside {
+    padding: 0 2% 2%  2%;
+    font-size: 90%;
+    color: #555;
+  }
+  $this[data-calendar] .event.dark {
+    background: #f90;
+    border-color: #e40;
+  }
+  $this[data-calendar] .event.dark h4 {
+    color: #e20;
+  }
+  $this[data-calendar] .event.dark aside {
+    color: #e20;
+  }
+  $this[data-calendar] .event.light {
+    background: #0cf;
+    border-color: #09c;
+  }
+  $this[data-calendar] .event.light h4 {
+    color: #06a;
+  }
+  $this[data-calendar] .event.light aside {
+    color: #06a;
+  }
+  $this[data-calendar] input:checked + label:before {
+    display: none;
+  }
+`)}

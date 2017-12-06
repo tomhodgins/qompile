@@ -7,7 +7,7 @@
     "qompile": "qompile.js"
   },
   "scripts": {
-    "test": "node qompile -v"
+    "test": "node qompile -m"
   },
   "keywords": [
     "HTML",
@@ -25,7 +25,10 @@
     "flattener"
   ],
   "dependencies": {
+    "css-mqpacker": "^6.0.1",
+    "cssnano": "^3.10.0",
     "minimist": "^1.2.0",
+    "postcss": "^6.0.14",
     "puppeteer": "^0.13.0"
   },
   "author": "Tommy Hodgins",
