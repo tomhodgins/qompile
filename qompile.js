@@ -5,7 +5,7 @@
 # Qompile
 ## version 0.0.5
 
-Compile HTML and container queries into HTML and CSS media queries. This tool consumes an HTML input file and a CSS stylesheet that can makeuse of use JS interpolation anywhere via `${}`.
+Convert Container Queries to CSS Media Queries. This tool consumes an HTML input file and a CSS stylesheet that can makeuse of use JS interpolation anywhere via `${}`.
 
 Included in this compiler is a mixin for container queries, named `containerQuery()` which accepts three arguments: `selector`, `test`, and `stylesheet`:
 

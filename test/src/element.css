@@ -1,0 +1,70 @@
+/*
+
+These element queries have nothing to do with width, but extend the power of CSS selector - as long as they don't need to be used with interactive content. This means they aren't suitable for:
+
+- interaction-based pseudo-classes like :hover, :focus, :active, etc
+- queries on interactive content, like inside form elements
+- dynamic HTML that will in structure after the page loads
+- scroll position or dimensions
+
+Where it might be useful:
+
+- select by text content length
+- select by regex search of text content
+- select by string search of text content
+- select direct parents of a CSS selector
+- select ancestors of a CSS selector
+- select previous sibling of a CSS selector
+- select first instance of CSS selector in DOM
+
+*/
+
+/* Character count in text content */
+${containerQuery('.headline h2', el => el.textContent.length > 10, `
+  $this {
+    font-size: 80%;
+    background: lime;
+  }
+`)}
+
+/* String match in text content */
+${containerQuery('.string li', el => (el.textContent).indexOf('laughter') !== -1, `
+  $this {
+    background: hotpink;
+  }
+`)}
+
+/* Regex match in text content */
+${containerQuery('.regex li', el => /laughter/.test(el.textContent), `
+  $this {
+    background: orange;
+  }
+`)}
+
+/* Parent Selector */
+${containerQuery('.parent > ul', el => el.querySelector('.target') && el.querySelector('.target').parentNode === el, `
+  $this {
+    background: purple;
+  }
+`)}
+
+/* Ancestor Selector */
+${containerQuery('.ancestor .goal', el => el.querySelector('.target'), `
+  $this {
+    border: 5px solid yellow;
+  }
+`)}
+
+/* Previous Sibling Selector */
+${containerQuery('.previous *', el => el.nextElementSibling && el.nextElementSibling.classList.contains('target'), `
+  $this {
+    background: teal;
+  }
+`)}
+
+/* First of Selector in Document */
+${containerQuery('.first span', el => el === document.querySelector('.first span'), `
+  $this {
+    background: hotpink;
+  }
+`)}

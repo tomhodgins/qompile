@@ -1,6 +1,8 @@
 # Qompile
 
-Compile HTML and container queries into HTML and CSS media queries. This tool consumes an HTML input file and a CSS stylesheet that can make use of use JS interpolation anywhere via `${}`.
+**Build with Container Queries. Ship CSS.**
+
+This tool converts Container Queries to CSS Media Queries by consuming an HTML input file and a CSS stylesheet.
 
 Included in this compiler is a mixin for container queries, named `containerQuery()` which accepts three arguments: `selector`, `test`, and `stylesheet`:
 
@@ -17,6 +19,22 @@ ${containerQuery('div', el => el.offsetWidth > 500, `
   }
 `)}
 ```
+
+## What does it do?
+
+This plugin is capable of prerendering width-based container queries, as long as the width of the elements wit breakpoints is ultimately derived from the width of the viewport in the layout.
+
+It is also possible to use a very limited set of element queries (like setting a style based on things present in your HTML) that are non-interactive and as long as they won't need updating after the page loads. Watch for more demos exploring what can be predicted in advance!
+
+## What does it _not_ do?
+
+It does not support any height-based container queries, nor any width-based container queries on element in layouts that change in ways not deriving from width of the viewport.
+
+For example, if you have a collapsing sidebar that can be toggled without the viewport changing width, `qompile` wouldn't be able to predict the widths of elements in both states.
+
+It is also impossible to predict elements that have been added to the page after the page has loaded.
+
+If you're looking for realtime element & container queries that are able to adapt to new elements and events in the browser, check out a [CSS reprocessor](https://github.com/topics/css-reprocessor) like [EQCSS](https://github.com/eqcss/eqcss), [CSSplus](https://github.com/tomhodgins/cssplus), [reproCSS](https://github.com/tomhodgins/reprocss), [JS-in-CSS](https://github.com/tomhodgins/js-in-css), or [QSS](https://github.com/tomhodgins/qss).
 
 ## Usage
 
@@ -88,24 +106,32 @@ For a comparison between live container queries using `preqompile` and container
 
 ### Widget Demo
 
-- [Input HTML](test/src/widget.html)
-- [Input Container Queries](test/src/widget.css)
+- [Input HTML](https://github.com/tomhodgins/qompile/blob/master/test/src/widget.html)
+- [Input Container Queries](https://github.com/tomhodgins/qompile/blob/master/test/src/widget.css)
 - [Live preview via `preqompile` runtime](https://tomhodgins.github.io/qompile/test/widget-live.html)
 - [Compiled inline via `qompile`](https://tomhodgins.github.io/qompile/test/widget-inline.html)
 - [Compiled with external stylesheet via `qompile`](https://tomhodgins.github.io/qompile/test/widget-external.html)
 
 ### Nested Components Demo
 
-- [Input HTML](test/src/nested.html)
-- [Input Container Queries](test/src/nested.css)
+- [Input HTML](https://github.com/tomhodgins/qompile/blob/master/test/src/nested.html)
+- [Input Container Queries](https://github.com/tomhodgins/qompile/blob/master/test/src/nested.css)
 - [Live preview via `preqompile` runtime](https://tomhodgins.github.io/qompile/test/nested-live.html)
 - [Compiled inline via `qompile`](https://tomhodgins.github.io/qompile/test/nested-inline.html)
 - [Compiled with external stylesheet via `qompile`](https://tomhodgins.github.io/qompile/test/nested-external.html)
 
 ### Calendar Demo
 
-- [Input HTML](test/src/calendar.html)
-- [Input Container Queries](test/src/calendar.css)
+- [Input HTML](https://github.com/tomhodgins/qompile/blob/master/test/src/calendar.html)
+- [Input Container Queries](https://github.com/tomhodgins/qompile/blob/master/test/src/calendar.css)
 - [Live preview via `preqompile` runtime](https://tomhodgins.github.io/qompile/test/calendar-live.html)
 - [Compiled inline via `qompile`](https://tomhodgins.github.io/qompile/test/calendar-inline.html)
 - [Compiled with external stylesheet via `qompile`](https://tomhodgins.github.io/qompile/test/calendar-external.html)
+
+### Element Queries Demo
+
+- [Input HTML](https://github.com/tomhodgins/qompile/blob/master/test/src/element.html)
+- [Input Container Queries](https://github.com/tomhodgins/qompile/blob/master/test/src/element.css)
+- [Live preview via `preqompile` runtime](https://tomhodgins.github.io/qompile/test/element-live.html)
+- [Compiled inline via `qompile`](https://tomhodgins.github.io/qompile/test/element-inline.html)
+- [Compiled with external stylesheet via `qompile`](https://tomhodgins.github.io/qompile/test/element-external.html)

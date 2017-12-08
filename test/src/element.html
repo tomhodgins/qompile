@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<title>Element Query Explorations</title>
+
+<h1>Element Query Explorations for static (non-dynamic) HTML</h1>
+
+<h2>Character count in text content</h2>
+<section class=headline>
+  <h2>MMMMM</h2>
+  <h2>MMMMMMMMMM</h2>
+  <h2>MMMMMMMMMMMMMMM</h2>
+  <h2>MMMMMMMMMMMMMMMMMMMM</h2>
+</section>
+
+<h2>String match in text content</h2>
+<section class=string>
+  <ul>
+    <li>to laugh is the best medicine</li>
+    <li>laughter is the best medicine</li>
+    <li>slaughter is the best medicine</li>
+  </ul>
+</section>
+
+<h2>Regex match in text content</h2>
+<section class=regex>
+  <ul>
+    <li>to laugh is the best medicine</li>
+    <li>laughter is the best medicine</li>
+    <li>slaughter is the best medicine</li>
+  </ul>
+</section>
+
+<h2>Parent Selector (like <code>:has()</code>)</h2>
+<section class=parent>
+  <ul>
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+  </ul>
+  <ul>
+    <li>item 1</li>
+    <li class=target>target</li>
+    <li>item 3</li>
+  </ul>
+</section>
+
+<h2>Ancestor Selector</h2>
+<section class=ancestor>
+  <ul class=goal>
+    <li>item</li>
+    <li>item
+      <ul>
+        <li>item</li>
+        <li class=target>target</li>
+        <li>item</li>
+      </ul>
+    </li>
+    <li>item</li>
+  </ul>
+  <ul>
+    <li>item</li>
+    <li>item
+      <ul class=goal>
+        <li>item</li>
+        <li class=target>target</li>
+        <li>item</li>
+      </ul>
+    </li>
+    <li>item</li>
+  </ul>
+</section>
+
+<h2>Previous Sibling Selector</h2>
+<section class=previous>
+  <ul>
+    <li>item</li>
+    <li class=target>target</li>
+    <li>item</li>
+  </ul>
+</section>
+
+<h2>First of Selector in Document</h2>
+<section class=first>
+  <p>Lorem ipsum <span>dolor</span> sit amet, consectetur <span>adipisicing</span> elit, sed do eiusmod tempor <span>incididunt</span> ut labore et dolore magna aliqua.</p>
+</section>
