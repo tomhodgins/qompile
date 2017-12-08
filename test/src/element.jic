@@ -68,3 +68,10 @@ ${containerQuery('.first span', el => el === document.querySelector('.first span
     background: hotpink;
   }
 `)}
+
+/* Number of children */
+${containerQuery('.children ul', el => el.children.length >= 3, `
+  $this {
+    background: lime;
+  }
+`)}
