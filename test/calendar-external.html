@@ -1,85 +1,429 @@
 <!DOCTYPE html><html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Element Query Explorations</title>
+<title>Calendar Demo</title>
 
-<link href="element-external.css" rel="stylesheet"></head><body><h1>Element Query Explorations for static (non-dynamic) HTML</h1>
+<link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
 
-<h2>Character count in text content</h2>
-<section class="headline">
-  <h2>MMMMM</h2>
-  <h2>MMMMMMMMMM</h2>
-  <h2 data-headlineh2eleltextcontentlength10at1="0" data-headlineh2eleltextcontentlength10at31="0" data-headlineh2eleltextcontentlength10at61="0" data-headlineh2eleltextcontentlength10at91="0" data-headlineh2eleltextcontentlength10at121="0" data-headlineh2eleltextcontentlength10at151="0" data-headlineh2eleltextcontentlength10at181="0" data-headlineh2eleltextcontentlength10at211="0" data-headlineh2eleltextcontentlength10at241="0" data-headlineh2eleltextcontentlength10at271="0" data-headlineh2eleltextcontentlength10at301="0" data-headlineh2eleltextcontentlength10at331="0" data-headlineh2eleltextcontentlength10at361="0" data-headlineh2eleltextcontentlength10at391="0" data-headlineh2eleltextcontentlength10at421="0" data-headlineh2eleltextcontentlength10at451="0" data-headlineh2eleltextcontentlength10at481="0" data-headlineh2eleltextcontentlength10at511="0" data-headlineh2eleltextcontentlength10at541="0" data-headlineh2eleltextcontentlength10at571="0" data-headlineh2eleltextcontentlength10at601="0" data-headlineh2eleltextcontentlength10at631="0" data-headlineh2eleltextcontentlength10at661="0" data-headlineh2eleltextcontentlength10at691="0" data-headlineh2eleltextcontentlength10at721="0" data-headlineh2eleltextcontentlength10at751="0" data-headlineh2eleltextcontentlength10at781="0" data-headlineh2eleltextcontentlength10at811="0" data-headlineh2eleltextcontentlength10at841="0" data-headlineh2eleltextcontentlength10at871="0" data-headlineh2eleltextcontentlength10at901="0" data-headlineh2eleltextcontentlength10at931="0" data-headlineh2eleltextcontentlength10at961="0" data-headlineh2eleltextcontentlength10at991="0" data-headlineh2eleltextcontentlength10at1021="0" data-headlineh2eleltextcontentlength10at1051="0" data-headlineh2eleltextcontentlength10at1081="0" data-headlineh2eleltextcontentlength10at1111="0" data-headlineh2eleltextcontentlength10at1141="0" data-headlineh2eleltextcontentlength10at1171="0" data-headlineh2eleltextcontentlength10at1201="0" data-headlineh2eleltextcontentlength10at1231="0" data-headlineh2eleltextcontentlength10at1261="0" data-headlineh2eleltextcontentlength10at1291="0" data-headlineh2eleltextcontentlength10at1321="0" data-headlineh2eleltextcontentlength10at1351="0" data-headlineh2eleltextcontentlength10at1381="0" data-headlineh2eleltextcontentlength10at1411="0" data-headlineh2eleltextcontentlength10at1441="0" data-headlineh2eleltextcontentlength10at1471="0" data-headlineh2eleltextcontentlength10at1501="0" data-headlineh2eleltextcontentlength10at1531="0" data-headlineh2eleltextcontentlength10at1561="0" data-headlineh2eleltextcontentlength10at1591="0" data-headlineh2eleltextcontentlength10at1621="0" data-headlineh2eleltextcontentlength10at1651="0" data-headlineh2eleltextcontentlength10at1681="0" data-headlineh2eleltextcontentlength10at1711="0" data-headlineh2eleltextcontentlength10at1741="0" data-headlineh2eleltextcontentlength10at1771="0" data-headlineh2eleltextcontentlength10at1801="0" data-headlineh2eleltextcontentlength10at1831="0" data-headlineh2eleltextcontentlength10at1861="0" data-headlineh2eleltextcontentlength10at1891="0" data-headlineh2eleltextcontentlength10at1921="0" data-headlineh2eleltextcontentlength10at1951="0" data-headlineh2eleltextcontentlength10at1981="0" data-headlineh2eleltextcontentlength10at2000="0">MMMMMMMMMMMMMMM</h2>
-  <h2 data-headlineh2eleltextcontentlength10at1="1" data-headlineh2eleltextcontentlength10at31="1" data-headlineh2eleltextcontentlength10at61="1" data-headlineh2eleltextcontentlength10at91="1" data-headlineh2eleltextcontentlength10at121="1" data-headlineh2eleltextcontentlength10at151="1" data-headlineh2eleltextcontentlength10at181="1" data-headlineh2eleltextcontentlength10at211="1" data-headlineh2eleltextcontentlength10at241="1" data-headlineh2eleltextcontentlength10at271="1" data-headlineh2eleltextcontentlength10at301="1" data-headlineh2eleltextcontentlength10at331="1" data-headlineh2eleltextcontentlength10at361="1" data-headlineh2eleltextcontentlength10at391="1" data-headlineh2eleltextcontentlength10at421="1" data-headlineh2eleltextcontentlength10at451="1" data-headlineh2eleltextcontentlength10at481="1" data-headlineh2eleltextcontentlength10at511="1" data-headlineh2eleltextcontentlength10at541="1" data-headlineh2eleltextcontentlength10at571="1" data-headlineh2eleltextcontentlength10at601="1" data-headlineh2eleltextcontentlength10at631="1" data-headlineh2eleltextcontentlength10at661="1" data-headlineh2eleltextcontentlength10at691="1" data-headlineh2eleltextcontentlength10at721="1" data-headlineh2eleltextcontentlength10at751="1" data-headlineh2eleltextcontentlength10at781="1" data-headlineh2eleltextcontentlength10at811="1" data-headlineh2eleltextcontentlength10at841="1" data-headlineh2eleltextcontentlength10at871="1" data-headlineh2eleltextcontentlength10at901="1" data-headlineh2eleltextcontentlength10at931="1" data-headlineh2eleltextcontentlength10at961="1" data-headlineh2eleltextcontentlength10at991="1" data-headlineh2eleltextcontentlength10at1021="1" data-headlineh2eleltextcontentlength10at1051="1" data-headlineh2eleltextcontentlength10at1081="1" data-headlineh2eleltextcontentlength10at1111="1" data-headlineh2eleltextcontentlength10at1141="1" data-headlineh2eleltextcontentlength10at1171="1" data-headlineh2eleltextcontentlength10at1201="1" data-headlineh2eleltextcontentlength10at1231="1" data-headlineh2eleltextcontentlength10at1261="1" data-headlineh2eleltextcontentlength10at1291="1" data-headlineh2eleltextcontentlength10at1321="1" data-headlineh2eleltextcontentlength10at1351="1" data-headlineh2eleltextcontentlength10at1381="1" data-headlineh2eleltextcontentlength10at1411="1" data-headlineh2eleltextcontentlength10at1441="1" data-headlineh2eleltextcontentlength10at1471="1" data-headlineh2eleltextcontentlength10at1501="1" data-headlineh2eleltextcontentlength10at1531="1" data-headlineh2eleltextcontentlength10at1561="1" data-headlineh2eleltextcontentlength10at1591="1" data-headlineh2eleltextcontentlength10at1621="1" data-headlineh2eleltextcontentlength10at1651="1" data-headlineh2eleltextcontentlength10at1681="1" data-headlineh2eleltextcontentlength10at1711="1" data-headlineh2eleltextcontentlength10at1741="1" data-headlineh2eleltextcontentlength10at1771="1" data-headlineh2eleltextcontentlength10at1801="1" data-headlineh2eleltextcontentlength10at1831="1" data-headlineh2eleltextcontentlength10at1861="1" data-headlineh2eleltextcontentlength10at1891="1" data-headlineh2eleltextcontentlength10at1921="1" data-headlineh2eleltextcontentlength10at1951="1" data-headlineh2eleltextcontentlength10at1981="1" data-headlineh2eleltextcontentlength10at2000="1">MMMMMMMMMMMMMMMMMMMM</h2>
-</section>
+<style>
+  /* Base Calendar Styles */
+  [data-calendar] {
+    position: relative;
+    padding: 0;
+    font-size: 12pt;
+    opacity: 1;
+  }
+  [data-calendar] * {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-kerning: auto;
+    line-height: 1.2;
+  }
+  [data-calendar] .title {
+    text-align: center;
+    color: #333;
+    font-family: 'Source Sans Pro', sans-serif;
+    position: relative;
+    z-index: 100;
+    margin: 0 0 12pt 0;
+    transition: font-size .1s ease-in-out;
+  }
+  [data-calendar] .title .month {
+    font-weight: 400;
+  }
+  [data-calendar] .title .year {
+    font-weight: 300;
+    opacity: .5;
+  }
+  [data-calendar] nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 0 .5em;
+    z-index: 200;
+    transition: opacity .2s ease-in-out;
+  }
+  [data-calendar] nav a {
+    display: inline-block;
+    color: #999;
+    padding: .1em .1em;
+    transition: color .1s ease-in-out;
+  }
+  [data-calendar] nav a.prev {
+    float: left;
+  }
+  [data-calendar] nav a.next {
+    float: right;
+  }
+  [data-calendar] nav a:hover,
+  [data-calendar] nav a :focus {
+    color: #555;
+  }
+  [data-calendar] .dates:after {
+     content: '';
+     display: block;
+     clear: both;
+  }
+  [data-calendar] article,
+  [data-calendar] article * {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  [data-calendar] article {
+    display: block;
+    float: left;
+    width: 14.28571428571429%;
+    padding-top: 14.28571428571429%;
+    position: relative;
+    z-index: 250;
+  }
+  [data-calendar] input[type="radio"] {
+    display: none;
+  }
+  [data-calendar] .reset,
+  [data-calendar] .reset:hover {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent !important;
+    z-index: 200;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  [data-calendar] input:checked + .reset,
+  [data-calendar] input:checked + .reset:hover {
+    cursor: default;
+    display: block;
+    z-index: 20;
+  }
+  [data-calendar] ol {
+    display: block;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    font-family: 'Source Sans Pro', 'Open Sans', Roboto, 'Helvetica Neue', 'Myriad Pro', Myriad, 'Segoe UI', Arial, sans-serif;
+    pointer-events: none;
+    cursor: default;
+    position: relative;
+    z-index: 200;
+  }
+  [data-calendar] ol li {
+    display: inline-block;
+    float: left;
+    width: 14.28571428571429%;
+    padding: 0;
+    color: #999;
+    padding: .5em 0;
+    text-align: center;
+    font-size: 10pt;
+    z-index: 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: .5em;
+  }
+  [data-calendar] ol li .short {
+    display: none;
+  }
+  [data-calendar] ol li .full {
+    display: none;
+  }
+</style>
 
-<h2>String match in text content</h2>
-<section class="string">
-  <ul>
-    <li>to laugh is the best medicine</li>
-    <li data-stringlieleltextcontentindexoflaughter1at1="0" data-stringlieleltextcontentindexoflaughter1at31="0" data-stringlieleltextcontentindexoflaughter1at61="0" data-stringlieleltextcontentindexoflaughter1at91="0" data-stringlieleltextcontentindexoflaughter1at121="0" data-stringlieleltextcontentindexoflaughter1at151="0" data-stringlieleltextcontentindexoflaughter1at181="0" data-stringlieleltextcontentindexoflaughter1at211="0" data-stringlieleltextcontentindexoflaughter1at241="0" data-stringlieleltextcontentindexoflaughter1at271="0" data-stringlieleltextcontentindexoflaughter1at301="0" data-stringlieleltextcontentindexoflaughter1at331="0" data-stringlieleltextcontentindexoflaughter1at361="0" data-stringlieleltextcontentindexoflaughter1at391="0" data-stringlieleltextcontentindexoflaughter1at421="0" data-stringlieleltextcontentindexoflaughter1at451="0" data-stringlieleltextcontentindexoflaughter1at481="0" data-stringlieleltextcontentindexoflaughter1at511="0" data-stringlieleltextcontentindexoflaughter1at541="0" data-stringlieleltextcontentindexoflaughter1at571="0" data-stringlieleltextcontentindexoflaughter1at601="0" data-stringlieleltextcontentindexoflaughter1at631="0" data-stringlieleltextcontentindexoflaughter1at661="0" data-stringlieleltextcontentindexoflaughter1at691="0" data-stringlieleltextcontentindexoflaughter1at721="0" data-stringlieleltextcontentindexoflaughter1at751="0" data-stringlieleltextcontentindexoflaughter1at781="0" data-stringlieleltextcontentindexoflaughter1at811="0" data-stringlieleltextcontentindexoflaughter1at841="0" data-stringlieleltextcontentindexoflaughter1at871="0" data-stringlieleltextcontentindexoflaughter1at901="0" data-stringlieleltextcontentindexoflaughter1at931="0" data-stringlieleltextcontentindexoflaughter1at961="0" data-stringlieleltextcontentindexoflaughter1at991="0" data-stringlieleltextcontentindexoflaughter1at1021="0" data-stringlieleltextcontentindexoflaughter1at1051="0" data-stringlieleltextcontentindexoflaughter1at1081="0" data-stringlieleltextcontentindexoflaughter1at1111="0" data-stringlieleltextcontentindexoflaughter1at1141="0" data-stringlieleltextcontentindexoflaughter1at1171="0" data-stringlieleltextcontentindexoflaughter1at1201="0" data-stringlieleltextcontentindexoflaughter1at1231="0" data-stringlieleltextcontentindexoflaughter1at1261="0" data-stringlieleltextcontentindexoflaughter1at1291="0" data-stringlieleltextcontentindexoflaughter1at1321="0" data-stringlieleltextcontentindexoflaughter1at1351="0" data-stringlieleltextcontentindexoflaughter1at1381="0" data-stringlieleltextcontentindexoflaughter1at1411="0" data-stringlieleltextcontentindexoflaughter1at1441="0" data-stringlieleltextcontentindexoflaughter1at1471="0" data-stringlieleltextcontentindexoflaughter1at1501="0" data-stringlieleltextcontentindexoflaughter1at1531="0" data-stringlieleltextcontentindexoflaughter1at1561="0" data-stringlieleltextcontentindexoflaughter1at1591="0" data-stringlieleltextcontentindexoflaughter1at1621="0" data-stringlieleltextcontentindexoflaughter1at1651="0" data-stringlieleltextcontentindexoflaughter1at1681="0" data-stringlieleltextcontentindexoflaughter1at1711="0" data-stringlieleltextcontentindexoflaughter1at1741="0" data-stringlieleltextcontentindexoflaughter1at1771="0" data-stringlieleltextcontentindexoflaughter1at1801="0" data-stringlieleltextcontentindexoflaughter1at1831="0" data-stringlieleltextcontentindexoflaughter1at1861="0" data-stringlieleltextcontentindexoflaughter1at1891="0" data-stringlieleltextcontentindexoflaughter1at1921="0" data-stringlieleltextcontentindexoflaughter1at1951="0" data-stringlieleltextcontentindexoflaughter1at1981="0" data-stringlieleltextcontentindexoflaughter1at2000="0">laughter is the best medicine</li>
-    <li data-stringlieleltextcontentindexoflaughter1at1="1" data-stringlieleltextcontentindexoflaughter1at31="1" data-stringlieleltextcontentindexoflaughter1at61="1" data-stringlieleltextcontentindexoflaughter1at91="1" data-stringlieleltextcontentindexoflaughter1at121="1" data-stringlieleltextcontentindexoflaughter1at151="1" data-stringlieleltextcontentindexoflaughter1at181="1" data-stringlieleltextcontentindexoflaughter1at211="1" data-stringlieleltextcontentindexoflaughter1at241="1" data-stringlieleltextcontentindexoflaughter1at271="1" data-stringlieleltextcontentindexoflaughter1at301="1" data-stringlieleltextcontentindexoflaughter1at331="1" data-stringlieleltextcontentindexoflaughter1at361="1" data-stringlieleltextcontentindexoflaughter1at391="1" data-stringlieleltextcontentindexoflaughter1at421="1" data-stringlieleltextcontentindexoflaughter1at451="1" data-stringlieleltextcontentindexoflaughter1at481="1" data-stringlieleltextcontentindexoflaughter1at511="1" data-stringlieleltextcontentindexoflaughter1at541="1" data-stringlieleltextcontentindexoflaughter1at571="1" data-stringlieleltextcontentindexoflaughter1at601="1" data-stringlieleltextcontentindexoflaughter1at631="1" data-stringlieleltextcontentindexoflaughter1at661="1" data-stringlieleltextcontentindexoflaughter1at691="1" data-stringlieleltextcontentindexoflaughter1at721="1" data-stringlieleltextcontentindexoflaughter1at751="1" data-stringlieleltextcontentindexoflaughter1at781="1" data-stringlieleltextcontentindexoflaughter1at811="1" data-stringlieleltextcontentindexoflaughter1at841="1" data-stringlieleltextcontentindexoflaughter1at871="1" data-stringlieleltextcontentindexoflaughter1at901="1" data-stringlieleltextcontentindexoflaughter1at931="1" data-stringlieleltextcontentindexoflaughter1at961="1" data-stringlieleltextcontentindexoflaughter1at991="1" data-stringlieleltextcontentindexoflaughter1at1021="1" data-stringlieleltextcontentindexoflaughter1at1051="1" data-stringlieleltextcontentindexoflaughter1at1081="1" data-stringlieleltextcontentindexoflaughter1at1111="1" data-stringlieleltextcontentindexoflaughter1at1141="1" data-stringlieleltextcontentindexoflaughter1at1171="1" data-stringlieleltextcontentindexoflaughter1at1201="1" data-stringlieleltextcontentindexoflaughter1at1231="1" data-stringlieleltextcontentindexoflaughter1at1261="1" data-stringlieleltextcontentindexoflaughter1at1291="1" data-stringlieleltextcontentindexoflaughter1at1321="1" data-stringlieleltextcontentindexoflaughter1at1351="1" data-stringlieleltextcontentindexoflaughter1at1381="1" data-stringlieleltextcontentindexoflaughter1at1411="1" data-stringlieleltextcontentindexoflaughter1at1441="1" data-stringlieleltextcontentindexoflaughter1at1471="1" data-stringlieleltextcontentindexoflaughter1at1501="1" data-stringlieleltextcontentindexoflaughter1at1531="1" data-stringlieleltextcontentindexoflaughter1at1561="1" data-stringlieleltextcontentindexoflaughter1at1591="1" data-stringlieleltextcontentindexoflaughter1at1621="1" data-stringlieleltextcontentindexoflaughter1at1651="1" data-stringlieleltextcontentindexoflaughter1at1681="1" data-stringlieleltextcontentindexoflaughter1at1711="1" data-stringlieleltextcontentindexoflaughter1at1741="1" data-stringlieleltextcontentindexoflaughter1at1771="1" data-stringlieleltextcontentindexoflaughter1at1801="1" data-stringlieleltextcontentindexoflaughter1at1831="1" data-stringlieleltextcontentindexoflaughter1at1861="1" data-stringlieleltextcontentindexoflaughter1at1891="1" data-stringlieleltextcontentindexoflaughter1at1921="1" data-stringlieleltextcontentindexoflaughter1at1951="1" data-stringlieleltextcontentindexoflaughter1at1981="1" data-stringlieleltextcontentindexoflaughter1at2000="1">slaughter is the best medicine</li>
-  </ul>
-</section>
-
-<h2>Regex match in text content</h2>
-<section class="regex">
-  <ul>
-    <li>to laugh is the best medicine</li>
-    <li data-regexliellaughtertesteltextcontentat1="0" data-regexliellaughtertesteltextcontentat31="0" data-regexliellaughtertesteltextcontentat61="0" data-regexliellaughtertesteltextcontentat91="0" data-regexliellaughtertesteltextcontentat121="0" data-regexliellaughtertesteltextcontentat151="0" data-regexliellaughtertesteltextcontentat181="0" data-regexliellaughtertesteltextcontentat211="0" data-regexliellaughtertesteltextcontentat241="0" data-regexliellaughtertesteltextcontentat271="0" data-regexliellaughtertesteltextcontentat301="0" data-regexliellaughtertesteltextcontentat331="0" data-regexliellaughtertesteltextcontentat361="0" data-regexliellaughtertesteltextcontentat391="0" data-regexliellaughtertesteltextcontentat421="0" data-regexliellaughtertesteltextcontentat451="0" data-regexliellaughtertesteltextcontentat481="0" data-regexliellaughtertesteltextcontentat511="0" data-regexliellaughtertesteltextcontentat541="0" data-regexliellaughtertesteltextcontentat571="0" data-regexliellaughtertesteltextcontentat601="0" data-regexliellaughtertesteltextcontentat631="0" data-regexliellaughtertesteltextcontentat661="0" data-regexliellaughtertesteltextcontentat691="0" data-regexliellaughtertesteltextcontentat721="0" data-regexliellaughtertesteltextcontentat751="0" data-regexliellaughtertesteltextcontentat781="0" data-regexliellaughtertesteltextcontentat811="0" data-regexliellaughtertesteltextcontentat841="0" data-regexliellaughtertesteltextcontentat871="0" data-regexliellaughtertesteltextcontentat901="0" data-regexliellaughtertesteltextcontentat931="0" data-regexliellaughtertesteltextcontentat961="0" data-regexliellaughtertesteltextcontentat991="0" data-regexliellaughtertesteltextcontentat1021="0" data-regexliellaughtertesteltextcontentat1051="0" data-regexliellaughtertesteltextcontentat1081="0" data-regexliellaughtertesteltextcontentat1111="0" data-regexliellaughtertesteltextcontentat1141="0" data-regexliellaughtertesteltextcontentat1171="0" data-regexliellaughtertesteltextcontentat1201="0" data-regexliellaughtertesteltextcontentat1231="0" data-regexliellaughtertesteltextcontentat1261="0" data-regexliellaughtertesteltextcontentat1291="0" data-regexliellaughtertesteltextcontentat1321="0" data-regexliellaughtertesteltextcontentat1351="0" data-regexliellaughtertesteltextcontentat1381="0" data-regexliellaughtertesteltextcontentat1411="0" data-regexliellaughtertesteltextcontentat1441="0" data-regexliellaughtertesteltextcontentat1471="0" data-regexliellaughtertesteltextcontentat1501="0" data-regexliellaughtertesteltextcontentat1531="0" data-regexliellaughtertesteltextcontentat1561="0" data-regexliellaughtertesteltextcontentat1591="0" data-regexliellaughtertesteltextcontentat1621="0" data-regexliellaughtertesteltextcontentat1651="0" data-regexliellaughtertesteltextcontentat1681="0" data-regexliellaughtertesteltextcontentat1711="0" data-regexliellaughtertesteltextcontentat1741="0" data-regexliellaughtertesteltextcontentat1771="0" data-regexliellaughtertesteltextcontentat1801="0" data-regexliellaughtertesteltextcontentat1831="0" data-regexliellaughtertesteltextcontentat1861="0" data-regexliellaughtertesteltextcontentat1891="0" data-regexliellaughtertesteltextcontentat1921="0" data-regexliellaughtertesteltextcontentat1951="0" data-regexliellaughtertesteltextcontentat1981="0" data-regexliellaughtertesteltextcontentat2000="0">laughter is the best medicine</li>
-    <li data-regexliellaughtertesteltextcontentat1="1" data-regexliellaughtertesteltextcontentat31="1" data-regexliellaughtertesteltextcontentat61="1" data-regexliellaughtertesteltextcontentat91="1" data-regexliellaughtertesteltextcontentat121="1" data-regexliellaughtertesteltextcontentat151="1" data-regexliellaughtertesteltextcontentat181="1" data-regexliellaughtertesteltextcontentat211="1" data-regexliellaughtertesteltextcontentat241="1" data-regexliellaughtertesteltextcontentat271="1" data-regexliellaughtertesteltextcontentat301="1" data-regexliellaughtertesteltextcontentat331="1" data-regexliellaughtertesteltextcontentat361="1" data-regexliellaughtertesteltextcontentat391="1" data-regexliellaughtertesteltextcontentat421="1" data-regexliellaughtertesteltextcontentat451="1" data-regexliellaughtertesteltextcontentat481="1" data-regexliellaughtertesteltextcontentat511="1" data-regexliellaughtertesteltextcontentat541="1" data-regexliellaughtertesteltextcontentat571="1" data-regexliellaughtertesteltextcontentat601="1" data-regexliellaughtertesteltextcontentat631="1" data-regexliellaughtertesteltextcontentat661="1" data-regexliellaughtertesteltextcontentat691="1" data-regexliellaughtertesteltextcontentat721="1" data-regexliellaughtertesteltextcontentat751="1" data-regexliellaughtertesteltextcontentat781="1" data-regexliellaughtertesteltextcontentat811="1" data-regexliellaughtertesteltextcontentat841="1" data-regexliellaughtertesteltextcontentat871="1" data-regexliellaughtertesteltextcontentat901="1" data-regexliellaughtertesteltextcontentat931="1" data-regexliellaughtertesteltextcontentat961="1" data-regexliellaughtertesteltextcontentat991="1" data-regexliellaughtertesteltextcontentat1021="1" data-regexliellaughtertesteltextcontentat1051="1" data-regexliellaughtertesteltextcontentat1081="1" data-regexliellaughtertesteltextcontentat1111="1" data-regexliellaughtertesteltextcontentat1141="1" data-regexliellaughtertesteltextcontentat1171="1" data-regexliellaughtertesteltextcontentat1201="1" data-regexliellaughtertesteltextcontentat1231="1" data-regexliellaughtertesteltextcontentat1261="1" data-regexliellaughtertesteltextcontentat1291="1" data-regexliellaughtertesteltextcontentat1321="1" data-regexliellaughtertesteltextcontentat1351="1" data-regexliellaughtertesteltextcontentat1381="1" data-regexliellaughtertesteltextcontentat1411="1" data-regexliellaughtertesteltextcontentat1441="1" data-regexliellaughtertesteltextcontentat1471="1" data-regexliellaughtertesteltextcontentat1501="1" data-regexliellaughtertesteltextcontentat1531="1" data-regexliellaughtertesteltextcontentat1561="1" data-regexliellaughtertesteltextcontentat1591="1" data-regexliellaughtertesteltextcontentat1621="1" data-regexliellaughtertesteltextcontentat1651="1" data-regexliellaughtertesteltextcontentat1681="1" data-regexliellaughtertesteltextcontentat1711="1" data-regexliellaughtertesteltextcontentat1741="1" data-regexliellaughtertesteltextcontentat1771="1" data-regexliellaughtertesteltextcontentat1801="1" data-regexliellaughtertesteltextcontentat1831="1" data-regexliellaughtertesteltextcontentat1861="1" data-regexliellaughtertesteltextcontentat1891="1" data-regexliellaughtertesteltextcontentat1921="1" data-regexliellaughtertesteltextcontentat1951="1" data-regexliellaughtertesteltextcontentat1981="1" data-regexliellaughtertesteltextcontentat2000="1">slaughter is the best medicine</li>
-  </ul>
-</section>
-
-<h2>Parent Selector (like <code>:has()</code>)</h2>
-<section class="parent">
-  <ul>
-    <li>item 1</li>
-    <li>item 2</li>
-    <li>item 3</li>
-  </ul>
-  <ul data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat31="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat61="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat91="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat121="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat151="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat181="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat211="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat241="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat271="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat301="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat331="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat361="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat391="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat421="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat451="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat481="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat511="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat541="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat571="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat601="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat631="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat661="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat691="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat721="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat751="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat781="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat811="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat841="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat871="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat901="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat931="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat961="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat991="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1021="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1051="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1081="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1111="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1141="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1171="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1201="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1231="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1261="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1291="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1321="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1351="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1381="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1411="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1441="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1471="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1501="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1531="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1561="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1591="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1621="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1651="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1681="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1711="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1741="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1771="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1801="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1831="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1861="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1891="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1921="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1951="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat1981="0" data-parentulelelqueryselectortargetelqueryselectortargetparentnodeelat2000="0">
-    <li>item 1</li>
-    <li class="target">target</li>
-    <li>item 3</li>
-  </ul>
-</section>
-
-<h2>Ancestor Selector</h2>
-<section class="ancestor">
-  <ul class="goal" data-ancestorgoalelelqueryselectortargetat1="0" data-ancestorgoalelelqueryselectortargetat31="0" data-ancestorgoalelelqueryselectortargetat61="0" data-ancestorgoalelelqueryselectortargetat91="0" data-ancestorgoalelelqueryselectortargetat121="0" data-ancestorgoalelelqueryselectortargetat151="0" data-ancestorgoalelelqueryselectortargetat181="0" data-ancestorgoalelelqueryselectortargetat211="0" data-ancestorgoalelelqueryselectortargetat241="0" data-ancestorgoalelelqueryselectortargetat271="0" data-ancestorgoalelelqueryselectortargetat301="0" data-ancestorgoalelelqueryselectortargetat331="0" data-ancestorgoalelelqueryselectortargetat361="0" data-ancestorgoalelelqueryselectortargetat391="0" data-ancestorgoalelelqueryselectortargetat421="0" data-ancestorgoalelelqueryselectortargetat451="0" data-ancestorgoalelelqueryselectortargetat481="0" data-ancestorgoalelelqueryselectortargetat511="0" data-ancestorgoalelelqueryselectortargetat541="0" data-ancestorgoalelelqueryselectortargetat571="0" data-ancestorgoalelelqueryselectortargetat601="0" data-ancestorgoalelelqueryselectortargetat631="0" data-ancestorgoalelelqueryselectortargetat661="0" data-ancestorgoalelelqueryselectortargetat691="0" data-ancestorgoalelelqueryselectortargetat721="0" data-ancestorgoalelelqueryselectortargetat751="0" data-ancestorgoalelelqueryselectortargetat781="0" data-ancestorgoalelelqueryselectortargetat811="0" data-ancestorgoalelelqueryselectortargetat841="0" data-ancestorgoalelelqueryselectortargetat871="0" data-ancestorgoalelelqueryselectortargetat901="0" data-ancestorgoalelelqueryselectortargetat931="0" data-ancestorgoalelelqueryselectortargetat961="0" data-ancestorgoalelelqueryselectortargetat991="0" data-ancestorgoalelelqueryselectortargetat1021="0" data-ancestorgoalelelqueryselectortargetat1051="0" data-ancestorgoalelelqueryselectortargetat1081="0" data-ancestorgoalelelqueryselectortargetat1111="0" data-ancestorgoalelelqueryselectortargetat1141="0" data-ancestorgoalelelqueryselectortargetat1171="0" data-ancestorgoalelelqueryselectortargetat1201="0" data-ancestorgoalelelqueryselectortargetat1231="0" data-ancestorgoalelelqueryselectortargetat1261="0" data-ancestorgoalelelqueryselectortargetat1291="0" data-ancestorgoalelelqueryselectortargetat1321="0" data-ancestorgoalelelqueryselectortargetat1351="0" data-ancestorgoalelelqueryselectortargetat1381="0" data-ancestorgoalelelqueryselectortargetat1411="0" data-ancestorgoalelelqueryselectortargetat1441="0" data-ancestorgoalelelqueryselectortargetat1471="0" data-ancestorgoalelelqueryselectortargetat1501="0" data-ancestorgoalelelqueryselectortargetat1531="0" data-ancestorgoalelelqueryselectortargetat1561="0" data-ancestorgoalelelqueryselectortargetat1591="0" data-ancestorgoalelelqueryselectortargetat1621="0" data-ancestorgoalelelqueryselectortargetat1651="0" data-ancestorgoalelelqueryselectortargetat1681="0" data-ancestorgoalelelqueryselectortargetat1711="0" data-ancestorgoalelelqueryselectortargetat1741="0" data-ancestorgoalelelqueryselectortargetat1771="0" data-ancestorgoalelelqueryselectortargetat1801="0" data-ancestorgoalelelqueryselectortargetat1831="0" data-ancestorgoalelelqueryselectortargetat1861="0" data-ancestorgoalelelqueryselectortargetat1891="0" data-ancestorgoalelelqueryselectortargetat1921="0" data-ancestorgoalelelqueryselectortargetat1951="0" data-ancestorgoalelelqueryselectortargetat1981="0" data-ancestorgoalelelqueryselectortargetat2000="0">
-    <li>item</li>
-    <li>item
-      <ul>
-        <li>item</li>
-        <li class="target">target</li>
-        <li>item</li>
-      </ul>
-    </li>
-    <li>item</li>
-  </ul>
-  <ul>
-    <li>item</li>
-    <li>item</li>
-      <ul class="goal" data-ancestorgoalelelqueryselectortargetat1="1" data-ancestorgoalelelqueryselectortargetat31="1" data-ancestorgoalelelqueryselectortargetat61="1" data-ancestorgoalelelqueryselectortargetat91="1" data-ancestorgoalelelqueryselectortargetat121="1" data-ancestorgoalelelqueryselectortargetat151="1" data-ancestorgoalelelqueryselectortargetat181="1" data-ancestorgoalelelqueryselectortargetat211="1" data-ancestorgoalelelqueryselectortargetat241="1" data-ancestorgoalelelqueryselectortargetat271="1" data-ancestorgoalelelqueryselectortargetat301="1" data-ancestorgoalelelqueryselectortargetat331="1" data-ancestorgoalelelqueryselectortargetat361="1" data-ancestorgoalelelqueryselectortargetat391="1" data-ancestorgoalelelqueryselectortargetat421="1" data-ancestorgoalelelqueryselectortargetat451="1" data-ancestorgoalelelqueryselectortargetat481="1" data-ancestorgoalelelqueryselectortargetat511="1" data-ancestorgoalelelqueryselectortargetat541="1" data-ancestorgoalelelqueryselectortargetat571="1" data-ancestorgoalelelqueryselectortargetat601="1" data-ancestorgoalelelqueryselectortargetat631="1" data-ancestorgoalelelqueryselectortargetat661="1" data-ancestorgoalelelqueryselectortargetat691="1" data-ancestorgoalelelqueryselectortargetat721="1" data-ancestorgoalelelqueryselectortargetat751="1" data-ancestorgoalelelqueryselectortargetat781="1" data-ancestorgoalelelqueryselectortargetat811="1" data-ancestorgoalelelqueryselectortargetat841="1" data-ancestorgoalelelqueryselectortargetat871="1" data-ancestorgoalelelqueryselectortargetat901="1" data-ancestorgoalelelqueryselectortargetat931="1" data-ancestorgoalelelqueryselectortargetat961="1" data-ancestorgoalelelqueryselectortargetat991="1" data-ancestorgoalelelqueryselectortargetat1021="1" data-ancestorgoalelelqueryselectortargetat1051="1" data-ancestorgoalelelqueryselectortargetat1081="1" data-ancestorgoalelelqueryselectortargetat1111="1" data-ancestorgoalelelqueryselectortargetat1141="1" data-ancestorgoalelelqueryselectortargetat1171="1" data-ancestorgoalelelqueryselectortargetat1201="1" data-ancestorgoalelelqueryselectortargetat1231="1" data-ancestorgoalelelqueryselectortargetat1261="1" data-ancestorgoalelelqueryselectortargetat1291="1" data-ancestorgoalelelqueryselectortargetat1321="1" data-ancestorgoalelelqueryselectortargetat1351="1" data-ancestorgoalelelqueryselectortargetat1381="1" data-ancestorgoalelelqueryselectortargetat1411="1" data-ancestorgoalelelqueryselectortargetat1441="1" data-ancestorgoalelelqueryselectortargetat1471="1" data-ancestorgoalelelqueryselectortargetat1501="1" data-ancestorgoalelelqueryselectortargetat1531="1" data-ancestorgoalelelqueryselectortargetat1561="1" data-ancestorgoalelelqueryselectortargetat1591="1" data-ancestorgoalelelqueryselectortargetat1621="1" data-ancestorgoalelelqueryselectortargetat1651="1" data-ancestorgoalelelqueryselectortargetat1681="1" data-ancestorgoalelelqueryselectortargetat1711="1" data-ancestorgoalelelqueryselectortargetat1741="1" data-ancestorgoalelelqueryselectortargetat1771="1" data-ancestorgoalelelqueryselectortargetat1801="1" data-ancestorgoalelelqueryselectortargetat1831="1" data-ancestorgoalelelqueryselectortargetat1861="1" data-ancestorgoalelelqueryselectortargetat1891="1" data-ancestorgoalelelqueryselectortargetat1921="1" data-ancestorgoalelelqueryselectortargetat1951="1" data-ancestorgoalelelqueryselectortargetat1981="1" data-ancestorgoalelelqueryselectortargetat2000="1">
-        <li>item</li>
-        <li class="target">target</li>
-        <li>item</li>
-      </ul>
-    
-    <li>item</li>
-  </ul>
-</section>
-
-<h2>Previous Sibling Selector</h2>
-<section class="previous">
-  <ul>
-    <li data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat31="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat61="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat91="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat121="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat151="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat181="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat211="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat241="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat271="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat301="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat331="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat361="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat391="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat421="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat451="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat481="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat511="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat541="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat571="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat601="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat631="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat661="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat691="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat721="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat751="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat781="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat811="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat841="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat871="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat901="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat931="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat961="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat991="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1021="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1051="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1081="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1111="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1141="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1171="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1201="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1231="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1261="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1291="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1321="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1351="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1381="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1411="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1441="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1471="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1501="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1531="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1561="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1591="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1621="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1651="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1681="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1711="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1741="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1771="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1801="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1831="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1861="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1891="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1921="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1951="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat1981="0" data-previouselelnextelementsiblingelnextelementsiblingclasslistcontainstargetat2000="0">item</li>
-    <li class="target">target</li>
-    <li>item</li>
-  </ul>
-</section>
-
-<h2>First of Selector in Document</h2>
-<section class="first">
-  <p>Lorem ipsum <span data-firstspaneleldocumentqueryselectorfirstspanat1="0" data-firstspaneleldocumentqueryselectorfirstspanat31="0" data-firstspaneleldocumentqueryselectorfirstspanat61="0" data-firstspaneleldocumentqueryselectorfirstspanat91="0" data-firstspaneleldocumentqueryselectorfirstspanat121="0" data-firstspaneleldocumentqueryselectorfirstspanat151="0" data-firstspaneleldocumentqueryselectorfirstspanat181="0" data-firstspaneleldocumentqueryselectorfirstspanat211="0" data-firstspaneleldocumentqueryselectorfirstspanat241="0" data-firstspaneleldocumentqueryselectorfirstspanat271="0" data-firstspaneleldocumentqueryselectorfirstspanat301="0" data-firstspaneleldocumentqueryselectorfirstspanat331="0" data-firstspaneleldocumentqueryselectorfirstspanat361="0" data-firstspaneleldocumentqueryselectorfirstspanat391="0" data-firstspaneleldocumentqueryselectorfirstspanat421="0" data-firstspaneleldocumentqueryselectorfirstspanat451="0" data-firstspaneleldocumentqueryselectorfirstspanat481="0" data-firstspaneleldocumentqueryselectorfirstspanat511="0" data-firstspaneleldocumentqueryselectorfirstspanat541="0" data-firstspaneleldocumentqueryselectorfirstspanat571="0" data-firstspaneleldocumentqueryselectorfirstspanat601="0" data-firstspaneleldocumentqueryselectorfirstspanat631="0" data-firstspaneleldocumentqueryselectorfirstspanat661="0" data-firstspaneleldocumentqueryselectorfirstspanat691="0" data-firstspaneleldocumentqueryselectorfirstspanat721="0" data-firstspaneleldocumentqueryselectorfirstspanat751="0" data-firstspaneleldocumentqueryselectorfirstspanat781="0" data-firstspaneleldocumentqueryselectorfirstspanat811="0" data-firstspaneleldocumentqueryselectorfirstspanat841="0" data-firstspaneleldocumentqueryselectorfirstspanat871="0" data-firstspaneleldocumentqueryselectorfirstspanat901="0" data-firstspaneleldocumentqueryselectorfirstspanat931="0" data-firstspaneleldocumentqueryselectorfirstspanat961="0" data-firstspaneleldocumentqueryselectorfirstspanat991="0" data-firstspaneleldocumentqueryselectorfirstspanat1021="0" data-firstspaneleldocumentqueryselectorfirstspanat1051="0" data-firstspaneleldocumentqueryselectorfirstspanat1081="0" data-firstspaneleldocumentqueryselectorfirstspanat1111="0" data-firstspaneleldocumentqueryselectorfirstspanat1141="0" data-firstspaneleldocumentqueryselectorfirstspanat1171="0" data-firstspaneleldocumentqueryselectorfirstspanat1201="0" data-firstspaneleldocumentqueryselectorfirstspanat1231="0" data-firstspaneleldocumentqueryselectorfirstspanat1261="0" data-firstspaneleldocumentqueryselectorfirstspanat1291="0" data-firstspaneleldocumentqueryselectorfirstspanat1321="0" data-firstspaneleldocumentqueryselectorfirstspanat1351="0" data-firstspaneleldocumentqueryselectorfirstspanat1381="0" data-firstspaneleldocumentqueryselectorfirstspanat1411="0" data-firstspaneleldocumentqueryselectorfirstspanat1441="0" data-firstspaneleldocumentqueryselectorfirstspanat1471="0" data-firstspaneleldocumentqueryselectorfirstspanat1501="0" data-firstspaneleldocumentqueryselectorfirstspanat1531="0" data-firstspaneleldocumentqueryselectorfirstspanat1561="0" data-firstspaneleldocumentqueryselectorfirstspanat1591="0" data-firstspaneleldocumentqueryselectorfirstspanat1621="0" data-firstspaneleldocumentqueryselectorfirstspanat1651="0" data-firstspaneleldocumentqueryselectorfirstspanat1681="0" data-firstspaneleldocumentqueryselectorfirstspanat1711="0" data-firstspaneleldocumentqueryselectorfirstspanat1741="0" data-firstspaneleldocumentqueryselectorfirstspanat1771="0" data-firstspaneleldocumentqueryselectorfirstspanat1801="0" data-firstspaneleldocumentqueryselectorfirstspanat1831="0" data-firstspaneleldocumentqueryselectorfirstspanat1861="0" data-firstspaneleldocumentqueryselectorfirstspanat1891="0" data-firstspaneleldocumentqueryselectorfirstspanat1921="0" data-firstspaneleldocumentqueryselectorfirstspanat1951="0" data-firstspaneleldocumentqueryselectorfirstspanat1981="0" data-firstspaneleldocumentqueryselectorfirstspanat2000="0">dolor</span> sit amet, consectetur <span>adipisicing</span> elit, sed do eiusmod tempor <span>incididunt</span> ut labore et dolore magna aliqua.</p>
-</section></body></html>
+<link href="calendar-external.css" rel="stylesheet"></head><body><section data-calendar="" data-datacalendareleloffsetwidth850at1="0" data-datacalendareleloffsetwidth200at1="0" data-datacalendareleloffsetwidth850at31="0" data-datacalendareleloffsetwidth200at31="0" data-datacalendareleloffsetwidth850at61="0" data-datacalendareleloffsetwidth200at61="0" data-datacalendareleloffsetwidth850at91="0" data-datacalendareleloffsetwidth200at91="0" data-datacalendareleloffsetwidth850at121="0" data-datacalendareleloffsetwidth200at121="0" data-datacalendareleloffsetwidth850at151="0" data-datacalendareleloffsetwidth200at151="0" data-datacalendareleloffsetwidth850at181="0" data-datacalendareleloffsetwidth200at181="0" data-datacalendareleloffsetwidth850at211="0" data-datacalendareleloffsetwidth200at211="0" data-datacalendareleloffsetwidth850at241="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at241="0" data-datacalendareleloffsetwidth850at271="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at271="0" data-datacalendareleloffsetwidth850at301="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at301="0" data-datacalendareleloffsetwidth850at331="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at331="0" data-datacalendarel300eloffsetwidtheloffsetwidth400at331="0" data-datacalendareleloffsetwidth850at361="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at361="0" data-datacalendarel300eloffsetwidtheloffsetwidth400at361="0" data-datacalendareleloffsetwidth850at391="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at391="0" data-datacalendarel300eloffsetwidtheloffsetwidth400at391="0" data-datacalendareleloffsetwidth850at421="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at421="0" data-datacalendarel400eloffsetwidtheloffsetwidth500at421="0" data-datacalendareleloffsetwidth850at451="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at451="0" data-datacalendarel400eloffsetwidtheloffsetwidth500at451="0" data-datacalendareleloffsetwidth850at481="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at481="0" data-datacalendarel400eloffsetwidtheloffsetwidth500at481="0" data-datacalendareleloffsetwidth850at511="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at511="0" data-datacalendarel400eloffsetwidtheloffsetwidth500at511="0" data-datacalendareleloffsetwidth850at541="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at541="0" data-datacalendarel500eloffsetwidtheloffsetwidth700at541="0" data-datacalendareleloffsetwidth850at571="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at571="0" data-datacalendarel500eloffsetwidtheloffsetwidth700at571="0" data-datacalendareleloffsetwidth850at601="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at601="0" data-datacalendarel500eloffsetwidtheloffsetwidth700at601="0" data-datacalendareleloffsetwidth850at631="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at631="0" data-datacalendarel500eloffsetwidtheloffsetwidth700at631="0" data-datacalendareleloffsetwidth850at661="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at661="0" data-datacalendarel500eloffsetwidtheloffsetwidth700at661="0" data-datacalendareleloffsetwidth850at691="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at691="0" data-datacalendarel500eloffsetwidtheloffsetwidth700at691="0" data-datacalendareleloffsetwidth850at721="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at721="0" data-datacalendarel700eloffsetwidtheloffsetwidth850at721="0" data-datacalendareleloffsetwidth850at751="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at751="0" data-datacalendarel700eloffsetwidtheloffsetwidth850at751="0" data-datacalendareleloffsetwidth850at781="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at781="0" data-datacalendarel700eloffsetwidtheloffsetwidth850at781="0" data-datacalendareleloffsetwidth850at811="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at811="0" data-datacalendarel700eloffsetwidtheloffsetwidth850at811="0" data-datacalendareleloffsetwidth850at841="0" data-datacalendarel200eloffsetwidtheloffsetwidth850at841="0" data-datacalendarel700eloffsetwidtheloffsetwidth850at841="0" data-datacalendarel850eloffsetwidthat871="0" data-datacalendarel850eloffsetwidthat901="0" data-datacalendarel850eloffsetwidthat931="0" data-datacalendarel850eloffsetwidthat961="0" data-datacalendarel850eloffsetwidthat991="0" data-datacalendarel850eloffsetwidthat1021="0" data-datacalendarel850eloffsetwidthat1051="0" data-datacalendarel850eloffsetwidthat1081="0" data-datacalendarel850eloffsetwidthat1111="0" data-datacalendarel850eloffsetwidthat1141="0" data-datacalendarel850eloffsetwidthat1171="0" data-datacalendarel850eloffsetwidthat1201="0" data-datacalendarel850eloffsetwidthat1231="0" data-datacalendarel850eloffsetwidthat1261="0" data-datacalendarel850eloffsetwidthat1291="0" data-datacalendarel850eloffsetwidthat1321="0" data-datacalendarel850eloffsetwidthat1351="0" data-datacalendarel850eloffsetwidthat1381="0" data-datacalendarel850eloffsetwidthat1411="0" data-datacalendarel850eloffsetwidthat1441="0" data-datacalendarel850eloffsetwidthat1471="0" data-datacalendarel850eloffsetwidthat1501="0" data-datacalendarel850eloffsetwidthat1531="0" data-datacalendarel850eloffsetwidthat1561="0" data-datacalendarel850eloffsetwidthat1591="0" data-datacalendarel850eloffsetwidthat1621="0" data-datacalendarel850eloffsetwidthat1651="0" data-datacalendarel850eloffsetwidthat1681="0" data-datacalendarel850eloffsetwidthat1711="0" data-datacalendarel850eloffsetwidthat1741="0" data-datacalendarel850eloffsetwidthat1771="0" data-datacalendarel850eloffsetwidthat1801="0" data-datacalendarel850eloffsetwidthat1831="0" data-datacalendarel850eloffsetwidthat1861="0" data-datacalendarel850eloffsetwidthat1891="0" data-datacalendarel850eloffsetwidthat1921="0" data-datacalendarel850eloffsetwidthat1951="0" data-datacalendarel850eloffsetwidthat1981="0" data-datacalendarel850eloffsetwidthat2000="0">
+  <h2 class="title">
+    <span class="month">December</span>
+    <span class="year">2017</span>
+  </h2>
+  <nav>
+    <a href="#" class="prev"><i class="ion-android-arrow-back"></i></a>
+    <a href="#" class="next"><i class="ion-android-arrow-forward"></i></a>
+  </nav>
+  <ol>
+    <li>S<span class="short">un<span class="full">day</span></span></li>
+    <li>M<span class="short">on<span class="full">day</span></span></li>
+    <li>T<span class="short">ues<span class="full">day</span></span></li>
+    <li>W<span class="short">ed<span class="full">nesday</span></span></li>
+    <li>T<span class="short">hur<span class="full">sday</span></span></li>
+    <li>F<span class="short">ri<span class="full">day</span></span></li>
+    <li>S<span class="short">at<span class="full">urday</span></span></li>
+  </ol>
+  <div class="dates">
+    <!-- Week 1 -->
+    <article>
+      <input type="radio" name="eqCal" id="day_0">
+      <label for="day_0"></label>
+      <h3 class="date"></h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_1">
+      <label for="day_1">
+        <div>
+          <span class="event">
+            <h4>Event Title</h4>
+            <aside>Some info here<br>With a few more lines</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class="date">1</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_2">
+      <label for="day_2"></label>
+      <h3 class="date">2</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_3">
+      <label for="day_3">
+        <div>
+          <span class="event light">
+            <h4>Event Title</h4>
+            <aside><strong>Other:</strong> information<br><strong>More:</strong> information</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class="date">3</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_4">
+      <label for="day_4"></label>
+      <h3 class="date">4</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_5">
+      <label for="day_5">
+        <div>
+          <span class="event light">
+            <h4>Event Title</h4>
+            <aside><strong>Name of Event here!</strong><br>Info about event</aside>
+          </span>
+          <span class="event dark">
+            <h4>Event Title</h4>
+            <aside>More info here that will surely cause this text to overflow inside of the square</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class="date">5</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_6">
+      <label for="day_6"></label>
+      <h3 class="date">6</h3>
+    </article>
+    <!-- Week 2 -->
+    <article>
+      <input type="radio" name="eqCal" id="day_7">
+      <label for="day_7"></label>
+      <h3 class="date">7</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_8">
+      <label for="day_8"></label>
+      <h3 class="date">8</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_9">
+      <label for="day_9"></label>
+      <h3 class="date">9</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_10">
+      <label for="day_10"></label>
+      <h3 class="date">10</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_11">
+      <label for="day_11">
+        <div>
+          <span class="event dark">
+            <h4>Event Title</h4>
+            <aside><strong>Location:</strong> 123 Place Road<br><strong>Time:</strong> 5pm</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class="date">11</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_12">
+      <label for="day_12"></label>
+      <h3 class="date">12</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_13">
+      <label for="day_13"></label>
+      <h3 class="date">13</h3>
+    </article>
+    <!-- Week 3 -->
+    <article>
+      <input type="radio" name="eqCal" id="day_14">
+      <label for="day_14"></label>
+      <h3 class="date">14</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_15">
+      <label for="day_15">
+        <div>
+          <span class="event">
+            <h4>Event Title</h4>
+            <aside>This is a bit of information about this event</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class="date">15</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_16">
+      <label for="day_16"></label>
+      <h3 class="date">16</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_17">
+      <label for="day_17">
+        <div>
+          <span class="event light">
+            <h4>Event Title</h4>
+            <aside><strong>Speaker:</strong> Joe Somebody<br><strong>Room:</strong> 214</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class="date">17</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_18">
+      <label for="day_18"></label>
+      <h3 class="date">18</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_19">
+      <label for="day_19"></label>
+      <h3 class="date">19</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_20">
+      <label for="day_20"></label>
+      <h3 class="date">20</h3>
+    </article>
+    <!-- Week 4 -->
+    <article>
+      <input type="radio" name="eqCal" id="day_21">
+      <label for="day_21"></label>
+      <h3 class="date">21</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_22">
+      <label for="day_22">
+        <div>
+          <span class="event">
+            <h4>Event Title</h4>
+            <aside>7:30 sharp</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class="date today">22</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_23">
+      <label for="day_23"></label>
+      <h3 class="date">23</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_24">
+      <label for="day_24">
+        <div>
+          <span class="event light">
+            <h4>Session 1</h4>
+            <aside></aside>
+          </span>
+          <span class="event light">
+            <h4>Session 2</h4>
+            <aside></aside>
+          </span>
+          <span class="event light">
+            <h4>Session 3</h4>
+            <aside></aside>
+          </span>
+        </div>
+      </label>
+      <h3 class="date">24</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_25">
+      <label for="day_25"></label>
+      <h3 class="date">25</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_26">
+      <label for="day_26">
+        <div>
+          <span class="event light">
+            <h4>Event Title</h4>
+            <aside></aside>
+          </span>
+          <span class="event dark">
+            <h4>Event Title</h4>
+            <aside></aside>
+          </span>
+        </div>
+      </label>
+      <h3 class="date">26</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_27">
+      <label for="day_27"></label>
+      <h3 class="date">27</h3>
+    </article>
+    <!-- Week 5 -->
+    <article>
+      <input type="radio" name="eqCal" id="day_28">
+      <label for="day_28"></label>
+      <h3 class="date">28</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_29">
+      <label for="day_29">
+        <div>
+          <span class="event">
+            <h4>Event Title</h4>
+            <aside>Event Description</aside>
+          </span>
+        </div>
+      </label>
+      <h3 class="date">29</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_30">
+      <label for="day_30"></label>
+      <h3 class="date">30</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_31">
+      <label for="day_31">
+        <div>
+          <span class="event light">
+            <h4>Event Title</h4>
+            <aside></aside>
+          </span>
+        </div>
+      </label>
+      <h3 class="date">31</h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_32">
+      <label for="day_32"></label>
+      <h3 class="date"></h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_33">
+      <label for="day_33"></label>
+      <h3 class="date"></h3>
+    </article>
+    <article>
+      <input type="radio" name="eqCal" id="day_34">
+      <label for="day_34"></label>
+      <h3 class="date"></h3>
+    </article>
+  </div>
+  <input type="radio" name="eqCal" id="reset">
+  <label class="reset" for="reset">
+</label></section></body></html>
