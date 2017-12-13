@@ -3,7 +3,7 @@
 /*
 
 # Qompile
-## version 0.0.5
+## version 0.0.6
 
 Convert Container Queries to CSS Media Queries. This tool consumes an HTML input file and a CSS stylesheet that can makeuse of use JS interpolation anywhere via `${}`.
 
@@ -71,6 +71,8 @@ The path name of the external CSS file to output
 
 #### -v | --verbose
 
+Output result to console
+
 #### -m | --minify
 
 Enables rule de-duplication via CSSnano, and media query consolidation via css-mqpacker
@@ -102,8 +104,42 @@ const opts = {
   output: arg.o || arg.output || false,
   external: arg.e || arg.external || false,
   verbose: arg.v || arg.verbose || false,
-  minify: arg.m || arg.minify || false
+  minify: arg.m || arg.minify || false,
+  help: arg.help || false
 }
+
+// If help option present, output help text
+if (opts.help) {
+  console.log(`
+Usage: qompile [file] [options]
+
+Options:
+
+  -h, --html      The path name of the HTML file to be read
+
+  -c, --css       The path name of the stylesheet file to be read
+
+  -r, --range     A colon-separated number pair for minimum and maximum widths
+                  Default range is 1:2000
+
+  -s, --step      A number defining the step size
+                  Default step is 100
+
+  -o, --output    The path name of the HTML file to output
+
+  -e, --external  The path name of the external CSS file to output
+
+  -v, --verbose   Output result to console
+
+  -m, --minify    Enables rule de-duplication via CSSnano,
+                  and media query consolidation via css-mqpacker
+
+      --help      Displays this help text
+
+`)
+  process.exit()
+}
+
 
 // Enable verbose output if no output specified
 if (!opts.output && !opts.external) {
