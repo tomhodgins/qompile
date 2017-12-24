@@ -1,4 +1,4 @@
-![](https://i.imgur.com/tpDkTDz.png)
+![](https://i.imgur.com/t4zQycw.png)
 
 # Qompile
 
