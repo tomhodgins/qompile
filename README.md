@@ -40,18 +40,24 @@ If you're looking for realtime element & container queries that are able to adap
 
 ## Usage
 
+### Install Qompile from npm
+
+```bash
+npm -i qompile
+```
+
 ### HTML Compiler
 
 The simplest usage of Qompile on the command line outputs a test HTML and CSS to the console:
 
 ```bash
-$ qompile
+qompile
 ```
 
 A normal usage where you are consuming a file named `input.html` and a stylesheet named `styles.css` and outputting them as a file named `output.html` might look like this:
 
 ```bash
-$ qompile input.html -c styles.css -o output.html
+qompile input.html -c styles.css -o output.html
 ```
 
 #### Options
@@ -59,7 +65,7 @@ $ qompile input.html -c styles.css -o output.html
 If you want to fine-tune the output more, here is a list of all supported options and a description of what they are used for:
 
 ```bash
-$ qompile [-h|--html]* input.html [-c|-css] styles.css [-r|--range] 100:2000 [-s|--step] 100 [-o|--output] output.html [-e|--external] external.css [-v|--verbose]
+qompile [-h|--html]* input.html [-c|-css] styles.css [-r|--range] 100:2000 [-s|--step] 100 [-o|--output] output.html [-e|--external] external.css [-v|--verbose]
 ```
 
 ##### -h | --html
@@ -94,6 +100,10 @@ Enables logging of the result to the console
 
 Enables rule de-duplication via CSSnano, and media query consolidation via css-mqpacker
 
+#### --help
+
+Dislpays help text
+
 ### Live Debugging
 
 This compiler comes with a companion JavaScript runtime for debugging and previewing purposes. If you want to preview what the result of adding a 'Qompile' stylesheet to an HTML document will look like, include a link to the `preqompile.js` file in your HTML document like this:
@@ -109,7 +119,7 @@ For a comparison between live container queries using `preqompile` and container
 ### Widget Demo
 
 - [Input HTML](https://github.com/tomhodgins/qompile/blob/master/test/src/widget.html)
-- [Input Container Queries](https://github.com/tomhodgins/qompile/blob/master/test/src/widget.css)
+- [Input Container Queries](https://github.com/tomhodgins/qompile/blob/master/test/src/widget.jic)
 - [Live preview via `preqompile` runtime](https://tomhodgins.github.io/qompile/test/widget-live.html)
 - [Compiled inline via `qompile`](https://tomhodgins.github.io/qompile/test/widget-inline.html)
 - [Compiled with external stylesheet via `qompile`](https://tomhodgins.github.io/qompile/test/widget-external.html)
@@ -117,7 +127,7 @@ For a comparison between live container queries using `preqompile` and container
 ### Nested Components Demo
 
 - [Input HTML](https://github.com/tomhodgins/qompile/blob/master/test/src/nested.html)
-- [Input Container Queries](https://github.com/tomhodgins/qompile/blob/master/test/src/nested.css)
+- [Input Container Queries](https://github.com/tomhodgins/qompile/blob/master/test/src/nested.jic)
 - [Live preview via `preqompile` runtime](https://tomhodgins.github.io/qompile/test/nested-live.html)
 - [Compiled inline via `qompile`](https://tomhodgins.github.io/qompile/test/nested-inline.html)
 - [Compiled with external stylesheet via `qompile`](https://tomhodgins.github.io/qompile/test/nested-external.html)
@@ -125,7 +135,7 @@ For a comparison between live container queries using `preqompile` and container
 ### Calendar Demo
 
 - [Input HTML](https://github.com/tomhodgins/qompile/blob/master/test/src/calendar.html)
-- [Input Container Queries](https://github.com/tomhodgins/qompile/blob/master/test/src/calendar.css)
+- [Input Container Queries](https://github.com/tomhodgins/qompile/blob/master/test/src/calendar.jic)
 - [Live preview via `preqompile` runtime](https://tomhodgins.github.io/qompile/test/calendar-live.html)
 - [Compiled inline via `qompile`](https://tomhodgins.github.io/qompile/test/calendar-inline.html)
 - [Compiled with external stylesheet via `qompile`](https://tomhodgins.github.io/qompile/test/calendar-external.html)
@@ -133,7 +143,7 @@ For a comparison between live container queries using `preqompile` and container
 ### Element Queries Demo
 
 - [Input HTML](https://github.com/tomhodgins/qompile/blob/master/test/src/element.html)
-- [Input Container Queries](https://github.com/tomhodgins/qompile/blob/master/test/src/element.css)
+- [Input Container Queries](https://github.com/tomhodgins/qompile/blob/master/test/src/element.jic)
 - [Live preview via `preqompile` runtime](https://tomhodgins.github.io/qompile/test/element-live.html)
 - [Compiled inline via `qompile`](https://tomhodgins.github.io/qompile/test/element-inline.html)
 - [Compiled with external stylesheet via `qompile`](https://tomhodgins.github.io/qompile/test/element-external.html)

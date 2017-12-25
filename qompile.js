@@ -71,13 +71,15 @@ The path name of the external CSS file to output
 
 #### -v | --verbose
 
-Output result to console
+Enables logging of the result to the console
 
 #### -m | --minify
 
 Enables rule de-duplication via CSSnano, and media query consolidation via css-mqpacker
 
-Enables logging of the result to the console
+#### --help
+
+Dislpays help text
 
 ### Info
 
