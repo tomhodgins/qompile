@@ -1,42 +1,42 @@
 /* Widget Container Queries */
 ${containerQuery('.widget', el => 100 <= el.offsetWidth && el.offsetWidth < 200, `
-  $this.widget {
+  :self.widget {
     background: red;
   }
 `)}
 
 ${containerQuery('.widget', el => 200 <= el.offsetWidth && el.offsetWidth < 300, `
-  $this.widget {
+  :self.widget {
     background: orange;
   }
 `)}
 
 ${containerQuery('.widget', el => 300 <= el.offsetWidth && el.offsetWidth < 400, `
-  $this.widget {
+  :self.widget {
     background: yellow;
   }
 `)}
 
 ${containerQuery('.widget', el => 400 <= el.offsetWidth && el.offsetWidth < 500, `
-  $this.widget {
+  :self.widget {
     background: lime;
   }
 `)}
 
 ${containerQuery('.widget', el => 500 <= el.offsetWidth && el.offsetWidth < 600, `
-  $this.widget {
+  :self.widget {
     background: blue;
   }
 `)}
 
 ${containerQuery('.widget', el => 600 <= el.offsetWidth && el.offsetWidth < 700, `
-  $this.widget {
+  :self.widget {
     background: indigo;
   }
 `)}
 
 ${containerQuery('.widget', el => 700 <= el.offsetWidth, `
-  $this.widget {
+  :self.widget {
     background: purple;
   }
 `)}

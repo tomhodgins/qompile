@@ -3,7 +3,7 @@
 /*
 
 # Qompile
-## version 0.0.6
+## version 1.1.0
 
 Convert Container Queries to CSS Media Queries. This tool consumes an HTML input file and a CSS stylesheet that can makeuse of use JS interpolation anywhere via `${}`.
 
@@ -11,13 +11,13 @@ Included in this compiler is a mixin for container queries, named `containerQuer
 
 - `selector` is a CSS selector list quoted as a string
 - `test` is a JavaScript function that accepts a DOM node and returns true/false
-- `stylesheet` is a CSS stylesheet quoted as a string, anywhere the selector `$this` is used it will be replaced with a selector targeting the matching element
+- `stylesheet` is a CSS stylesheet quoted as a string, anywhere the selector `:self` is used it will be replaced with a selector targeting the matching element
 
 To write a container query applying a green background to a `<div>` element when it is wider than 500px you could write a query in this format:
 
 ```
 ${containerQuery('div', el => el.offsetWidth > 500, `
-  $this {
+  :self {
     background: lime;
   }
 `)}
@@ -172,7 +172,7 @@ const loadedHTML = opts.html
 
 const loadedCSS = opts.css
                     ? fs.readFileSync(opts.css).toString()
-                    : '${containerQuery("div", el => el.offsetWidth > 600, "$this{background:lime}")}'
+                    : '${containerQuery("div", el => el.offsetWidth > 600, ":self{background:lime}")}'
 
 // Prepare empty stylesheet
 let generatedCSS = ''
@@ -212,7 +212,7 @@ puppeteer.launch().then(async browser => {
 
             if (test(tag[i])) {
 
-              const css = stylesheet.replace(/\$this/g, `[data-${attr}="${count}"]`)
+              const css = stylesheet.replace(/:self|\$this/g, `[data-${attr}="${count}"]`)
 
               tag[i].setAttribute(`data-${attr}`, count)
               style += `@media(min-width: ${size}px)${next && ' and (max-width:' + next + 'px)' || ''}{${css}}`

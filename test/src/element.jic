@@ -21,7 +21,7 @@ Where it might be useful:
 
 /* Character count in text content */
 ${containerQuery('.headline h2', el => el.textContent.length > 10, `
-  $this {
+  :self {
     font-size: 80%;
     background: lime;
   }
@@ -29,49 +29,49 @@ ${containerQuery('.headline h2', el => el.textContent.length > 10, `
 
 /* String match in text content */
 ${containerQuery('.string li', el => (el.textContent).indexOf('laughter') !== -1, `
-  $this {
+  :self {
     background: hotpink;
   }
 `)}
 
 /* Regex match in text content */
 ${containerQuery('.regex li', el => /laughter/.test(el.textContent), `
-  $this {
+  :self {
     background: orange;
   }
 `)}
 
 /* Parent Selector */
 ${containerQuery('.parent > ul', el => el.querySelector('.target') && el.querySelector('.target').parentNode === el, `
-  $this {
+  :self {
     background: purple;
   }
 `)}
 
 /* Ancestor Selector */
 ${containerQuery('.ancestor .goal', el => el.querySelector('.target'), `
-  $this {
+  :self {
     border: 5px solid yellow;
   }
 `)}
 
 /* Previous Sibling Selector */
 ${containerQuery('.previous *', el => el.nextElementSibling && el.nextElementSibling.classList.contains('target'), `
-  $this {
+  :self {
     background: teal;
   }
 `)}
 
 /* First of Selector in Document */
 ${containerQuery('.first span', el => el === document.querySelector('.first span'), `
-  $this {
+  :self {
     background: hotpink;
   }
 `)}
 
 /* Number of children */
 ${containerQuery('.children ul', el => el.children.length >= 3, `
-  $this {
+  :self {
     background: lime;
   }
 `)}

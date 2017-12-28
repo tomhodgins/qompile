@@ -1,54 +1,54 @@
 /* Nested Container Queries */
 ${containerQuery('article', el => 200 <= el.offsetWidth && el.offsetWidth < 300, `
-  $this:before {
+  :self:before {
     content: '200px';
   }
-  $this {
+  :self {
     background: lightskyblue;
   }
 `)}
 
 ${containerQuery('article', el => 300 <= el.offsetWidth && el.offsetWidth < 400, `
-  $this:before {
+  :self:before {
     content: '300px';
   }
-  $this {
+  :self {
     background: pink;
   }
 `)}
 
 ${containerQuery('article', el => 400 <= el.offsetWidth && el.offsetWidth < 500, `
-  $this:before {
+  :self:before {
     content: '400px';
   }
-  $this {
+  :self {
     background: lightgreen;
   }
 `)}
 
 ${containerQuery('article', el => 500 <= el.offsetWidth && el.offsetWidth < 600, `
-  $this:before {
+  :self:before {
     content: '500px';
   }
-  $this {
+  :self {
     background: coral;
   }
 `)}
 
 ${containerQuery('article', el => 600 <= el.offsetWidth && el.offsetWidth < 700, `
-  $this:before {
+  :self:before {
     content: '600px';
   }
-  $this {
+  :self {
     background: mediumslateblue;
   }
 `)}
 
 ${containerQuery('article', el => 700 <= el.offsetWidth, `
-  $this:before {
+  :self:before {
     content: '700px';
   }
-  $this {
+  :self {
     background: khaki;
   }
 `)}

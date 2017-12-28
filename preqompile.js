@@ -1,7 +1,7 @@
 /*
 
 # Preqompile
-## version 0.0.6
+## version 1.1.0
 
 Preqompile is a JS-in-CSS runtime that interprets the same containerQuery syntax as Qompile.
 
@@ -33,7 +33,7 @@ function containerQuery(selector, test, stylesheet) {
 
     if (test(tag[i])) {
 
-      var css = stylesheet.replace(/\$this/g, '[data-' + attr + '="' + count + '"]')
+      var css = stylesheet.replace(/:self|\$this/g, '[data-' + attr + '="' + count + '"]')
 
       tag[i].setAttribute('data-' + attr, count)
       style += css

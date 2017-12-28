@@ -10,13 +10,13 @@ Included in this compiler is a mixin for container queries, named `containerQuer
 
 - `selector` is a CSS selector list quoted as a string
 - `test` is a JavaScript function that accepts a DOM node and returns true/false
-- `stylesheet` is a CSS stylesheet quoted as a string, anywhere the selector `$this` is used it will be replaced with a selector targeting the matching element
+- `stylesheet` is a CSS stylesheet quoted as a string, anywhere the selector `:self` is used it will be replaced with a selector targeting the matching element
 
 To write a container query applying a green background to a `<div>` element when it is wider than 500px you could write a query in this format:
 
 ```css
 ${containerQuery('div', el => el.offsetWidth > 500, `
-  $this {
+  :self {
     background: lime;
   }
 `)}
