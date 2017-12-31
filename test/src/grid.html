@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html data-theme=dark>
+<head>
+  <meta charset=utf-8>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <title>Element Query-Powered Grid</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,300italic,400italic,500italic,700italic|Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel=stylesheet>
+  <link href=https://staticasset.s3.amazonaws.com/basic.css rel=stylesheet>
+
+  <style>
+    body {
+      max-width: 100%;
+    }
+    p {
+      margin: 1em 0;
+    }
+    div {
+      min-height: 80px;
+      text-align: center;
+      padding: 1em;
+      background: rgba(255,255,255,.1);
+      border: 1px solid lime;
+    }
+
+    /* Element Query Grid */
+    [data-grid],
+    [data-grid] *,
+    [data-grid] *:before,
+    [data-grid] *:after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-kerning: auto;
+    }
+    [data-grid] {
+      font-size: 12pt;
+      line-height: 1.4;
+      font-weight: 400;
+      font-family: 'Open Sans', 'Source Sans Pro', Roboto, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Myriad Pro', 'Segoe UI', Myriad, Helvetica, 'Lucida Grande', 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, Arial, sans-serif;
+      -webkit-text-size-adjust: 100%;
+    }
+    [data-grid]:after,
+    [data-grid] [data-row]:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    [data-grid] [class*=-col-],
+    [data-grid] [class*=-split-] { float: left; }
+    [data-grid] [class^=col-1] { width: 10%; }
+    [data-grid] [class^=col-2] { width: 20%; }
+    [data-grid] [class^=col-3] { width: 30%; }
+    [data-grid] [class^=col-4] { width: 40%; }
+    [data-grid] [class^=col-5] { width: 50%; }
+    [data-grid] [class^=col-6] { width: 60%; }
+    [data-grid] [class^=col-7] { width: 70%; }
+    [data-grid] [class^=col-8] { width: 80%; }
+    [data-grid] [class^=col-9] { width: 90%; }
+    [data-grid] [class^=col-10] { width: 100%; }
+    [data-grid] [class^=split-1] { width: calc(100%/1); }
+    [data-grid] [class^=split-2] { width: calc(100%/2); }
+    [data-grid] [class^=split-3] { width: calc(100%/3); }
+    [data-grid] [class^=split-4] { width: calc(100%/4); }
+    [data-grid] [class^=split-5] { width: calc(100%/5); }
+    [data-grid] [class^=split-6] { width: calc(100%/6); }
+    [data-grid] [class^=split-7] { width: calc(100%/7); }
+    [data-grid] [class^=split-8] { width: calc(100%/8); }
+    [data-grid] [class^=split-9] { width: calc(100%/9); }
+    [data-grid] [class^=split-10] { width: calc(100%/10); }
+  </style>
+
+<h1>Container Query Grid</h1><br>
+
+<h2>Responsive Grid</h2>
+<p>Small = full width, Medium = thirds, Large = sixths.</p>
+<section data-grid>
+  <div class="col-10 medium-split-3 large-split-6"></div>
+  <div class="col-10 medium-split-3 large-split-6"></div>
+  <div class="col-10 medium-split-3 large-split-6"></div>
+  <div class="col-10 medium-split-3 large-split-6"></div>
+  <div class="col-10 medium-split-3 large-split-6"></div>
+  <div class="col-10 medium-split-3 large-split-6"></div>
+</section>
+
+<h2>Split Grid</h2>
+<p>Small = half width, Medium = 1, 2, 3, 4 split, Large = 4, 3, 2, 1 split.</p>
+<section data-grid>
+  <div class="col-5 medium-split-1 large-split-4"></div>
+  <div class="col-5 medium-split-2 large-split-4"></div>
+  <div class="col-5 medium-split-2 large-split-4"></div>
+  <div class="col-5 medium-split-3 large-split-4"></div>
+  <div class="col-5 medium-split-3 large-split-3"></div>
+  <div class="col-5 medium-split-3 large-split-3"></div>
+  <div class="col-5 medium-split-4 large-split-3"></div>
+  <div class="col-5 medium-split-4 large-split-2"></div>
+  <div class="col-5 medium-split-4 large-split-2"></div>
+  <div class="col-5 medium-split-4 large-split-1"></div>
+</section>
+
+<h2>Hidden Elements</h2>
+<p>Small = Hide Small, Medium = Hide Medium, Large = Hide Large.</p>
+<section data-grid>
+  <div class="hide-small col-10">Small</div>
+  <div class="hide-medium col-10">Medium</div>
+  <div class="hide-large col-10">Large</div>
+</section>

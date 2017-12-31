@@ -3,7 +3,7 @@
 /*
 
 # Qompile
-## version 1.1.0
+## version 1.1.1
 
 Convert Container Queries to CSS Media Queries. This tool consumes an HTML input file and a CSS stylesheet that can makeuse of use JS interpolation anywhere via `${}`.
 

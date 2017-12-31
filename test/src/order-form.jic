@@ -1,0 +1,36 @@
+/* Order Form Styles */
+${containerQuery('form', el => el.offsetWidth <= 450, `
+  :self select,
+  :self .split-input,
+  :self .split-input > *,
+  :self input {
+    width: 100%;
+  }
+  :self .split-input {
+    margin-bottom: 0;
+  }
+  :self .split-input > input,
+  :self .split-input > select {
+    margin-bottom: 2%;
+    width: 100%;
+  }
+  :self select:nth-child(even),
+  :self input:nth-child(even),
+  :self .split-input:nth-child(even) {
+    margin-left: 0;
+  }
+  :self .lockit:after {
+    display: none;
+  }
+  :self .split-input > select[class=three-quarters],
+  :self .split-input > input[class=three-quarters],
+  :self .split-input > textarea[class=three-quarters] {
+    width: 74%;
+  }
+  :self .split-input > select[class=quarter],
+  :self .split-input > input[class=quarter],
+  :self .split-input > textarea[class=quarter] {
+    margin-left: 2% !important;
+    width: 24%;
+  }
+`)}

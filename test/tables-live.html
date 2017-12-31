@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<title>Responsive Tables</title>
+
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,300italic,400italic,500italic,700italic|Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Source+Code+Pro:300,400,500,600,700,900" rel=stylesheet>
+<link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/67439/basic.css" rel=stylesheet data-populated=true>
+<link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/67439/data-buttons.css" rel=stylesheet data-populated=true>
+
+<style>
+  html,
+  body {
+    background: #eee;
+  }
+  [data-table] {
+    font-size: 12pt;
+    width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 1em 0;
+    color: #333;
+    border-collapse: collapse;
+  }
+  [data-table] thead th,
+  [data-table] tfoot th {
+    color: #777;
+    background: rgba(0,0,0,.1);
+  }
+  [data-table] caption {
+    padding: .5em;
+  }
+  [data-table] th,
+  [data-table] td {
+    padding: .5em;
+    background: white;
+    border: 1px solid #aaa;
+  }
+  [data-table] tbody tr:nth-of-type(even) {
+    background: rgba(0,0,0,.05);
+  }
+</style>
+
+<h1>Responsive Table Layouts</h1>
+<h2>Grid Layout using Qompile</h2>
+
+<p>These table styles are a cleaned up version of some table styles from a fantasy sports web app. The original table styles were written using regular CSS <code>@media</code> queries, but as soon as the tables needed to be added to a layout with a sidebar or other content we had to re-do the breakpoints all the time and we ended up with a lot of duplicate code.</p>
+<p>These tables use <code>containerQuery()</code> instead, via <a href=http://github.com/tomhodgins/qompile>Qompile</a>, so the responsive breakpoints are based on the width of the <code>&lt;table></code> elements themselves rather than the width of the browser. This way this one set of responsive styles should be able to style a <code>&lt;table></code> placed into any layout.</p>
+<br>
+
+<!-- Six Col -->
+<table data-table="col-six">
+  <caption>&lt;table data-table=col-six&gt;</caption>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>X Axis</th>
+      <th>Y Axis</th>
+      <th>Z Axis</th>
+      <th>Speed</th>
+      <th>Time</th>
+      <th>Finish</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-heading="Name">Test Flight 1</td>
+      <td data-heading="X Axis">120°</td>
+      <td data-heading="Y Axis">40°</td>
+      <td data-heading="Z Axis">157°</td>
+      <td data-heading="Speed">1503㎧</td>
+      <td data-heading="Time">1:05</td>
+      <td data-heading="Finish">459</td>
+    </tr>
+    <tr>
+      <td data-heading="Name">Test Flight 2</td>
+      <td data-heading="X Axis">80°</td>
+      <td data-heading="Y Axis">94°</td>
+      <td data-heading="Z Axis">30°</td>
+      <td data-heading="Speed">200㎧</td>
+      <td data-heading="Time">0:45</td>
+      <td data-heading="Finish">487</td>
+    </tr>
+    <tr>
+      <td data-heading="Name">Test Flight 3</td>
+      <td data-heading="X Axis">77°</td>
+      <td data-heading="Y Axis">78°</td>
+      <td data-heading="Z Axis">90°</td>
+      <td data-heading="Speed">55㎧</td>
+      <td data-heading="Time">1:20</td>
+      <td data-heading="Finish">458</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Five Col -->
+<table data-table="col-five">
+  <caption>&lt;table data-table=col-five&gt;</caption>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>X Axis</th>
+      <th>Y Axis</th>
+      <th>Z Axis</th>
+      <th>Speed</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-heading="Name">Test Flight 1</td>
+      <td data-heading="X Axis">120°</td>
+      <td data-heading="Y Axis">40°</td>
+      <td data-heading="Z Axis">157°</td>
+      <td data-heading="Speed">1503㎧</td>
+      <td data-heading="Time">1:05</td>
+    </tr>
+    <tr>
+      <td data-heading="Name">Test Flight 2</td>
+      <td data-heading="X Axis">80°</td>
+      <td data-heading="Y Axis">94°</td>
+      <td data-heading="Z Axis">30°</td>
+      <td data-heading="Speed">200㎧</td>
+      <td data-heading="Time">0:45</td>
+    </tr>
+    <tr>
+      <td data-heading="Name">Test Flight 3</td>
+      <td data-heading="X Axis">77°</td>
+      <td data-heading="Y Axis">78°</td>
+      <td data-heading="Z Axis">90°</td>
+      <td data-heading="Speed">55㎧</td>
+      <td data-heading="Time">1:20</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Four Col -->
+<table data-table="col-four">
+  <caption>&lt;table data-table=col-four&gt;</caption>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>X Axis</th>
+      <th>Y Axis</th>
+      <th>Z Axis</th>
+      <th>Speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-heading="Name">Test Flight 1</td>
+      <td data-heading="X Axis">120°</td>
+      <td data-heading="Y Axis">40°</td>
+      <td data-heading="Z Axis">157°</td>
+      <td data-heading="Speed">1503㎧</td>
+    </tr>
+    <tr>
+      <td data-heading="Name">Test Flight 1</td>
+      <td data-heading="X Axis">120°</td>
+      <td data-heading="Y Axis">40°</td>
+      <td data-heading="Z Axis">157°</td>
+      <td data-heading="Speed">1503㎧</td>
+    </tr>
+    <tr>
+      <td data-heading="Name">Test Flight 2</td>
+      <td data-heading="X Axis">80°</td>
+      <td data-heading="Y Axis">94°</td>
+      <td data-heading="Z Axis">30°</td>
+      <td data-heading="Speed">200㎧</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Three Col -->
+<table data-table="col-three">
+  <caption>&lt;table data-table=col-three&gt;</caption>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>X Axis</th>
+      <th>Y Axis</th>
+      <th>Z Axis</th>
+      <th>Speed</th>
+      <th>Time</th>
+      <th>Finish</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-heading="Name">Test Flight 1</td>
+      <td data-heading="X Axis">120°</td>
+      <td data-heading="Y Axis">40°</td>
+      <td data-heading="Z Axis">157°</td>
+      <td data-heading="Speed">1503㎧</td>
+      <td data-heading="Time">1:05</td>
+      <td data-heading="Finish">459</td>
+    </tr>
+    <tr>
+      <td data-heading="Name">Test Flight 2</td>
+      <td data-heading="X Axis">80°</td>
+      <td data-heading="Y Axis">94°</td>
+      <td data-heading="Z Axis">30°</td>
+      <td data-heading="Speed">200㎧</td>
+      <td data-heading="Time">0:45</td>
+      <td data-heading="Finish">487</td>
+    </tr>
+    <tr>
+      <td data-heading="Name">Test Flight 3</td>
+      <td data-heading="X Axis">77°</td>
+      <td data-heading="Y Axis">78°</td>
+      <td data-heading="Z Axis">90°</td>
+      <td data-heading="Speed">55㎧</td>
+      <td data-heading="Time">1:20</td>
+      <td data-heading="Finish">458</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Two Col -->
+<table data-table="col-two">
+  <caption>&lt;table data-table=col-two&gt;</caption>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>X Axis</th>
+      <th>Y Axis</th>
+      <th>Z Axis</th>
+      <th>Speed</th>
+      <th>Time</th>
+      <th>Finish</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-heading="Name">Test Flight 1</td>
+      <td data-heading="X Axis">120°</td>
+      <td data-heading="Y Axis">40°</td>
+      <td data-heading="Z Axis">157°</td>
+      <td data-heading="Speed">1503㎧</td>
+      <td data-heading="Time">1:05</td>
+      <td data-heading="Finish">459</td>
+    </tr>
+    <tr>
+      <td data-heading="Name">Test Flight 2</td>
+      <td data-heading="X Axis">80°</td>
+      <td data-heading="Y Axis">94°</td>
+      <td data-heading="Z Axis">30°</td>
+      <td data-heading="Speed">200㎧</td>
+      <td data-heading="Time">0:45</td>
+      <td data-heading="Finish">18</td>
+    </tr>
+    <tr>
+      <td data-heading="Name">Test Flight 3</td>
+      <td data-heading="X Axis">77°</td>
+      <td data-heading="Y Axis">78°</td>
+      <td data-heading="Z Axis">90°</td>
+      <td data-heading="Speed">55㎧</td>
+      <td data-heading="Time">1:20</td>
+      <td data-heading="Finish">458</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- One Col -->
+<table data-table="col-one">
+  <caption>&lt;table data-table=col-one&gt;</caption>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>X Axis</th>
+      <th>Y Axis</th>
+      <th>Z Axis</th>
+      <th>Speed</th>
+      <th>Time</th>
+      <th>Finish</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-heading="Name">Test Flight 1</td>
+      <td data-heading="X Axis">120°</td>
+      <td data-heading="Y Axis">40°</td>
+      <td data-heading="Z Axis">157°</td>
+      <td data-heading="Speed">1503㎧</td>
+      <td data-heading="Time">1:05</td>
+      <td data-heading="Finish">40</td>
+    </tr>
+    <tr>
+      <td data-heading="Name">Test Flight 2</td>
+      <td data-heading="X Axis">80°</td>
+      <td data-heading="Y Axis">94°</td>
+      <td data-heading="Z Axis">30°</td>
+      <td data-heading="Speed">200㎧</td>
+      <td data-heading="Time">0:45</td>
+      <td data-heading="Finish">487</td>
+    </tr>
+    <tr>
+      <td data-heading="Name">Test Flight 3</td>
+      <td data-heading="X Axis">77°</td>
+      <td data-heading="Y Axis">78°</td>
+      <td data-heading="Z Axis">90°</td>
+      <td data-heading="Speed">55㎧</td>
+      <td data-heading="Time">1:20</td>
+      <td data-heading="Finish">458</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Live Debugging Version -->
+<link href="src/tables.jic" rel=stylesheet>
+<script src="../preqompile.js"></script>

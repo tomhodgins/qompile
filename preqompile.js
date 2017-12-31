@@ -1,7 +1,7 @@
 /*
 
 # Preqompile
-## version 1.1.0
+## version 1.1.1
 
 Preqompile is a JS-in-CSS runtime that interprets the same containerQuery syntax as Qompile.
 
@@ -52,31 +52,34 @@ var JSinCSS = {}
 
 JSinCSS.load = function() {
 
-  var style = document.getElementsByTagName('style')
+  document.querySelectorAll('style').forEach(tag => {
 
-  for (i = 0; i < style.length; i++) {
+    if (tag.getAttribute('data-populated') == null) {
 
-    JSinCSS.process(style[i], style[i].innerHTML)
+      tag.setAttribute('data-populated', true)
+      JSinCSS.process(tag.innerHTML)
 
-  }
+    }
 
-  var link = document.getElementsByTagName('link')
+  })
 
-  for (i = 0; i < link.length; i++) {
+  document.querySelectorAll('link').forEach(tag => {
 
-    var currentLink = link[i]
+    if (tag.href
+        && tag.rel == 'stylesheet'
+        && tag.getAttribute('data-populated') == null) {
 
-    if (currentLink.href && link[i].rel == 'stylesheet') {
+      tag.setAttribute('data-populated', true)
 
-      (function() {
+      ;(() => {
 
         var xhr = new XMLHttpRequest
 
-        xhr.open('GET', currentLink.href, true)
+        xhr.open('GET', tag.href, true)
         xhr.send(null)
-        xhr.onreadystatechange = function() {
+        xhr.onload = function() {
 
-          JSinCSS.process(currentLink, xhr.responseText)
+          JSinCSS.process(xhr.responseText)
 
         }
 
@@ -84,41 +87,33 @@ JSinCSS.load = function() {
 
     }
 
-  }
+  })
 
 }
 
-JSinCSS.process = function(tag, stylesheet) {
+JSinCSS.process = function(stylesheet) {
 
   if (stylesheet) {
 
-    var event = ['load', 'resize', 'input', 'click']
+    var events = ['resize', 'input', 'click']
     var css = new Function('return `' + stylesheet + '`')
+    var style = document.createElement('style')
 
-    for (var j=0; j<event.length; j++) {
+    style.setAttribute('data-populated', true)
+    style.innerHTML = css()
+    document.head.appendChild(style)
 
-      if (!tag.getAttribute('data-populated')) {
+    events.forEach(event => {
 
-        var style = document.createElement('style')
+      window.addEventListener(event, e => {
 
         style.innerHTML = css()
-        tag.setAttribute('data-populated', true)
-        style.setAttribute('data-populated', true)
-        document.head.appendChild(style)
-
-      }
-
-      window.addEventListener(event[j], function(e) {
-
-        if (style) {
-
-          style.innerHTML = css()
-
-        }
 
       })
 
-    }
+    })
+
+    style.innerHTML = css()
 
   }
 

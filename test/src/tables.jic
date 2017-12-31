@@ -1,0 +1,88 @@
+${containerQuery('[data-table]', el => el.offsetWidth > 500, `
+  :self,
+  :self caption,
+  :self thead,
+  :self tbody,
+  :self tfoot,
+  :self tr,
+  :self th,
+  :self td {
+    display: block;
+    width: 100%;
+  }
+`)}
+
+${containerQuery('[data-table]', el => 500 <= el.offsetWidth, `
+  :self { display: table; width: 100%; }
+  :self caption { display: table-caption; width: auto; }
+  :self thead { display: table-header-group; width: auto; }
+  :self tbody { display: table-row-group; width: auto; }
+  :self tfoot { display: table-footer-group; width: auto; }
+  :self tr { display: table-row; width: auto; }
+  :self th,
+  :self td { display: table-cell; width: auto; }
+`)}
+
+/* Grid Table Layout */
+${containerQuery('[data-table^=col-]', el => el.offsetWidth < 500, `
+  :self thead {
+    display: none;
+  }
+  :self tr:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  :self[data-table$=-one] td { width: 100%; }
+  :self[data-table$=-two] td { width: 50%; }
+  :self[data-table$=-three] td { width: 33.33%; }
+  :self[data-table$=-four] td { width: 25%; }
+  :self[data-table$=-five] td {width: 20%; }
+  :self[data-table$=-six] td { width: 16.66%; }
+  :self td {
+    float: left;
+    line-height: 1.4;
+    padding: .5em 0;
+    text-align: center;
+    position: relative;
+  }
+  :self td:nth-of-type(n+2) {
+    padding-bottom: 17.5pt;
+  }
+  :self td:after {
+    content: attr(data-heading);
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 5pt;
+    left: 0;
+    font-size: 10pt;
+    line-height: 1.2;
+    color: #999;
+  }
+  :self td:first-of-type:after {
+    display: none;
+  }
+  :self td:nth-of-type(n+2) {
+    border-top: none;
+  }
+  :self[data-table$=-two] td:nth-of-type(n+2):nth-of-type(odd),
+  :self[data-table$=-three] td:nth-of-type(n+2):nth-of-type(3n),
+  :self[data-table$=-three] td:nth-of-type(n+2):nth-of-type(3n+1),
+  :self[data-table$=-four] td:nth-of-type(n+2),
+  :self[data-table$=-five] td:nth-of-type(n+2),
+  :self[data-table$=-six] td:nth-of-type(n+2) {
+    border-left-color: transparent;
+  }
+  :self[data-table$=-four] td:nth-of-type(4n+2),
+  :self[data-table$=-five] td:nth-of-type(5n+2),
+  :self[data-table$=-six] td:nth-of-type(6n+2) {
+    border-left-color: #aaa;
+  }
+  :self td:first-of-type {
+    color: #777;
+    background: rgba(0,0,0,.1);
+    font-weight: 600;
+    width: 100%;
+  }
+`)}
