@@ -147,3 +147,27 @@ For a comparison between live container queries using `preqompile` and container
 - [Live preview via `preqompile` runtime](https://tomhodgins.github.io/qompile/test/element-live.html)
 - [Compiled inline via `qompile`](https://tomhodgins.github.io/qompile/test/element-inline.html)
 - [Compiled with external stylesheet via `qompile`](https://tomhodgins.github.io/qompile/test/element-external.html)
+
+### Order Form Demo
+
+- [Input HTML](https://github.com/tomhodgins/qompile/blob/master/test/src/order-form.html)
+- [Input Container Queries](https://github.com/tomhodgins/qompile/blob/master/test/src/order-form.jic)
+- [Live preview via `preqompile` runtime](https://tomhodgins.github.io/qompile/test/order-form-live.html)
+- [Compiled inline via `qompile`](https://tomhodgins.github.io/qompile/test/order-form-inline.html)
+- [Compiled with external stylesheet via `qompile`](https://tomhodgins.github.io/qompile/test/order-form-external.html)
+
+### Tables Demo
+
+- [Input HTML](https://github.com/tomhodgins/qompile/blob/master/test/src/tables.html)
+- [Input Container Queries](https://github.com/tomhodgins/qompile/blob/master/test/src/tables.jic)
+- [Live preview via `preqompile` runtime](https://tomhodgins.github.io/qompile/test/tables-live.html)
+- [Compiled inline via `qompile`](https://tomhodgins.github.io/qompile/test/tables-inline.html)
+- [Compiled with external stylesheet via `qompile`](https://tomhodgins.github.io/qompile/test/tables-external.html)
+
+### Grid Demo
+
+- [Input HTML](https://github.com/tomhodgins/qompile/blob/master/test/src/grid.html)
+- [Input Container Queries](https://github.com/tomhodgins/qompile/blob/master/test/src/grid.jic)
+- [Live preview via `preqompile` runtime](https://tomhodgins.github.io/qompile/test/grid-live.html)
+- [Compiled inline via `qompile`](https://tomhodgins.github.io/qompile/test/grid-inline.html)
+- [Compiled with external stylesheet via `qompile`](https://tomhodgins.github.io/qompile/test/grid-external.html)
